@@ -550,6 +550,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow: hidden;
 }
 .liderazgo-section .container { position: relative; z-index: 1; }
+.liderazgo-section .section-sub {
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .liderazgo-heading {
   text-align: center;
   font-family: var(--font-sora);

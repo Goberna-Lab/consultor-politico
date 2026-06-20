@@ -516,9 +516,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .obtendras-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 380px));
   gap: 2px;
   margin-top: 48px;
+  justify-content: center;
 }
 .obtendras-item {
   padding: 32px 24px;
@@ -1234,7 +1235,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .desafio-right { min-height: 280px; }
 
   .obtendras-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; }
-  .obtendras-item:nth-child(5) { grid-column: span 2; }
 
   .liderazgo-tabs { grid-template-columns: 1fr; }
 
@@ -1275,7 +1275,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .egresado-title { font-size: 36px; }
 
   .obtendras-grid { grid-template-columns: 1fr; }
-  .obtendras-item:nth-child(5) { grid-column: span 1; }
 
   .metodologia-layers { grid-template-columns: 1fr; }
   .capa { border-left: none; border-top: 1px solid rgba(255,255,255,.1); }

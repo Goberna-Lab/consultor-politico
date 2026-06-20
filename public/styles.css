@@ -550,6 +550,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow: hidden;
 }
 .liderazgo-section .container { position: relative; z-index: 1; }
+.liderazgo-heading {
+  text-align: center;
+  font-family: var(--font-sora);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 64px;
+}
+.liderazgo-heading-green { color: #00DF82; }
+.liderazgo-heading-white { color: #F1F7F7; }
 .liderazgo-tabs {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 480px));

@@ -525,15 +525,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 32px 24px;
   border-top: 2px solid var(--green-3);
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
-.item-num {
-  font-family: var(--font-inter);
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--green-3);
-  line-height: 1;
+.obtendras-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .obtendras-item p {
   font-size: 15px;

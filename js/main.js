@@ -101,22 +101,74 @@
     track.style.animationDuration = (cards.length * 9) + 's';
   });
 
-  /* ---------- Form lead (stub) ---------- */
+  /* ---------- Form lead -> Google Sheet + Bravo + redirect a gracias (conversión) ---------- */
   var form = document.getElementById('lead-form');
   if (form) {
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz806STQakb81T3SteJpcPbp8JUJBHSVwSrdPvUx7A9-60pTi4HaFLweZlKTTboQbh2/exec';
+    var BRAVO_API = 'https://bravo.goberna.us';
+    var BRAVO_TENANT = 'consultor-politico';
+    var GRACIAS_URL = 'https://grupogoberna.com/pagina-de-agradecimiento/';
+    var CURSO = 'Consultor Político';
+    var PRODUCTO = 'Diploma Internacional del Consultor Político';
+    var NEGOCIO = 'Escuela', CATEGORIA = 'Curso Online', DIVISION = 'Estrategia Política';
+
+    // Atribución de campaña: UTM desde la URL (?utm_source=...&utm_campaign=...&utm_content=...)
+    var qs = new URLSearchParams(window.location.search);
+    var utm = {
+      source: qs.get('utm_source') || 'Sin dato',
+      campaign: qs.get('utm_campaign') || 'Sin dato',
+      content: qs.get('utm_content') || 'ORGANICO'
+    };
+    function field(n) { return form.elements[n] ? String(form.elements[n].value).trim() : ''; }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       var btn = form.querySelector('button[type="submit"]');
-      var original = btn.textContent;
-      btn.textContent = 'ENVIANDO…';
-      btn.disabled = true;
-      // TODO: conectar a endpoint real / CRM
-      setTimeout(function () {
-        btn.textContent = '¡GRACIAS! TE CONTACTAREMOS';
-        form.reset();
-        setTimeout(function () { btn.textContent = original; btn.disabled = false; }, 3000);
-      }, 700);
+      if (btn) { btn.textContent = 'ENVIANDO…'; btn.disabled = true; }
+
+      var nombre = field('nombre'), correo = field('email'), telefono = field('telefono');
+      var pais = field('pais'), cargo = field('cargo');
+
+      // 1) Google Sheet (Apps Script) — claves del FIELD_RENAMES. no-cors fire-and-forget.
+      var sheet = new URLSearchParams();
+      sheet.append('Nombres Completos', nombre);
+      sheet.append('País', pais);
+      sheet.append('Telefono', telefono);
+      sheet.append('Cargo', cargo);
+      sheet.append('Correo Electrónico', correo);
+      sheet.append('pagina', PRODUCTO);
+      sheet.append('negocio', NEGOCIO);
+      sheet.append('categoria', CATEGORIA);
+      sheet.append('division', DIVISION);
+      sheet.append('source', utm.source);
+      sheet.append('campaign', utm.campaign);
+      sheet.append('content', utm.content);
+      var sheetWrite = fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: sheet }).catch(function () {});
+
+      // 2) Bravo (panel) — best-effort, no bloquea.
+      var message = [
+        'Inscripción — Diploma Internacional del Consultor Político',
+        'País: ' + (pais || '-'),
+        'Cargo: ' + (cargo || '-'),
+        '',
+        'Origen: ' + utm.source + ' | Campaña: ' + utm.campaign + ' | Flyer: ' + utm.content
+      ].join('\n');
+      var bravoWrite = fetch(BRAVO_API + '/v1/public/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tenant: BRAVO_TENANT, name: nombre, email: correo, phone: telefono, message: message, website: '' })
+      }).catch(function () {});
+
+      // 3) Redirect a la página de gracias -> su pixel dispara la conversión "Lead General - Gracias".
+      Promise.race([
+        Promise.allSettled([sheetWrite, bravoWrite]),
+        new Promise(function (r) { setTimeout(r, 2500); })
+      ]).then(function () {
+        if (btn) btn.textContent = '¡LISTO! REDIRIGIENDO…';
+        var p = new URLSearchParams({ fullname: nombre, curso: CURSO });
+        window.location.href = GRACIAS_URL + '?' + p.toString();
+      });
     });
   }
 

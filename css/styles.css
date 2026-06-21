@@ -456,9 +456,12 @@ html, body { max-width: 100%; }
   border-radius: 10px;
   overflow: hidden;
   color: #10231f;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
 }
 .doc-card__img { display: block; width: 100%; aspect-ratio: 228 / 205; object-fit: cover; object-position: top center; }
-.doc-card__info { padding: 14px 14px 18px; }
+.doc-card__info { padding: 14px 14px 18px; flex: 1; }
 .doc-card__flag { display: inline-block; font-family: var(--font-mont); font-weight: 700; font-size: 11px; color: #10231f; letter-spacing: 1px; }
 .doc-card__name { font-family: var(--font-sora); font-weight: 700; font-size: 14px; color: #10231f; margin-top: 4px; }
 .doc-card__role { font-family: var(--font-mont); font-size: 11px; color: #3a4759; margin-top: 4px; }
@@ -622,6 +625,7 @@ html, body { max-width: 100%; }
 .footer__links { display: flex; flex-direction: column; gap: 10px; }
 .footer__links a { font-family: var(--font-mont); font-size: 14px; color: var(--white-75); transition: color .2s ease; }
 .footer__links a:hover { color: var(--gold); }
+.footer__contact { display: flex; flex-direction: column; gap: 10px; }
 .footer__wsp { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mont); font-size: 14px; color: var(--white-75); transition: color .2s ease; }
 .footer__wsp svg { flex-shrink: 0; color: #25D366; }
 .footer__wsp:hover { color: var(--gold); }
@@ -723,8 +727,7 @@ html, body { max-width: 100%; }
 /* --- Tablet horizontal: menos ítems por vista en carruseles --- */
 @media (max-width: 1024px) {
   .obt-item { flex-basis: calc((100% - 40px) / 2); }
-  .docentes__track .doc-card { flex-basis: calc((100% - 40px) / 2); }
-  .evo-card { flex-basis: calc((100% - 24px) / 2); }
+  .docentes__track .doc-card { flex-basis: calc((100% - 20px) / 2); }
 }
 
 /* --- Tablet / pantallas medianas: apilar columnas --- */
@@ -769,6 +772,8 @@ html, body { max-width: 100%; }
   .metodo__timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 16px; }
   .metodo__timeline::before { display: none; }
   .metodo__desc { max-width: none; }
+  /* 5ª etapa (impar final) centrada en vez de huérfana a la izquierda */
+  .metodo__step:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 50%; justify-self: center; }
 
   /* Reels: phones como carrusel deslizable (swipe) */
   .reels__inner { flex-direction: column; gap: 40px; padding: var(--sp) 0; }
@@ -831,6 +836,7 @@ html, body { max-width: 100%; }
   .evo-card,
   .docentes__track .doc-card { flex-basis: 100%; }
   .metodo__timeline { grid-template-columns: 1fr; }
+  .metodo__step:last-child:nth-child(odd) { max-width: none; justify-self: stretch; grid-column: auto; }
 
   /* Card de evolución: apilar imagen sobre lista */
   .evo-card__body { flex-direction: column; }

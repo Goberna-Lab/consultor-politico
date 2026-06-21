@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=v2-30">
+  <link rel="stylesheet" href="css/styles.css?v=v3-1">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -110,7 +110,7 @@
             Inscribirme ahora
             <svg class="btn__arrow" width="17" height="14" viewBox="0 0 17 14" fill="none"><path d="M1 7h14M10 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="#" class="btn btn--ghost">
+          <a href="#" class="btn btn--ghost" data-open-modal>
             Descargar Brochure
             <svg class="btn__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -167,7 +167,7 @@
         <p class="sabias__author">Abraham Lincoln</p>
         <p class="sabias__role">16.º Presidente de Estados Unidos</p>
       </div>
-      <a href="#" class="sabias__explore">
+      <a href="#sobre" class="sabias__explore">
         <span class="sabias__arrow">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
@@ -415,7 +415,7 @@
       </div>
 
       <div class="docentes__foot">
-        <a href="#" class="btn btn--ghost docentes__more">DESCUBRE MÁS</a>
+        <a href="#" class="btn btn--ghost docentes__more" data-open-modal>DESCUBRE MÁS</a>
       </div>
     </div>
   </section>
@@ -531,7 +531,7 @@
       <div class="reels__left">
         <h2 class="reels__title">ARCHIVO DE PENSAMIENTO <span class="text-gold">POLÍTICO</span></h2>
         <p class="reels__subtitle">Reels y contenidos destacados sobre liderazgo, campañas y estrategia política, para pensar la política desde una perspectiva profesional.</p>
-        <a href="#" class="btn btn--primary">Conoce más</a>
+        <a href="#" class="btn btn--primary" data-open-modal>Conoce más</a>
       </div>
       <div class="reels__right">
         <div class="archivo__grid">
@@ -592,7 +592,7 @@
         <div class="inv__pay-card">
           <h3 class="inv__pay-title">Diploma Internacional del Consultor Político</h3>
           <p class="inv__start">Inicio: <strong>22 de Junio</strong></p>
-          <p class="inv__cost">COSTO <span>USD $ 200</span></p>
+          <p class="inv__cost">COSTO <span>USD $200</span></p>
           <p class="inv__cd-label">Preventa <span>válida hasta el 21 de junio</span></p>
           <div class="countdown countdown--inv">
             <div class="countdown__item"><span class="countdown__number" id="inv-days">00</span><span class="countdown__label">DÍAS</span></div>
@@ -728,19 +728,19 @@
         <input class="mform__field" type="email" name="email" placeholder="Correo Electrónico" required autocomplete="email">
         <div class="mform__actions">
           <button type="submit" class="btn btn--primary mform__submit">INSCRÍBETE</button>
-          <a href="#" class="btn btn--ghost mform__brochure">
+          <button type="submit" class="btn btn--ghost mform__brochure">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             BROCHURE
-          </a>
+          </button>
         </div>
         <label class="mform__privacy">
           <input type="checkbox" name="privacy" required>
-          <span>GOBERNA te informa que los datos de carácter personal que nos proporciones en el presente formulario serán tratados exclusivamente por GOBERNA ANALITICS S.A.C. como responsable de esta web, con la finalidad de entregarte información acerca de este programa.</span>
+          <span>GOBERNA te informa que los datos de carácter personal que nos proporciones en el presente formulario serán tratados exclusivamente por GOBERNA ANALYTICS S.A.C. como responsable de esta web, con la finalidad de entregarte información acerca de este programa.</span>
         </label>
       </form>
     </div>
   </div>
 
-  <script src="js/main.js?v=v2-30"></script>
+  <script src="js/main.js?v=v3-1"></script>
 </body>
 </html>

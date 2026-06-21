@@ -1,0 +1,12 @@
+# Material de trabajo / temporales
+assets/_inbox/
+.playwright-mcp/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

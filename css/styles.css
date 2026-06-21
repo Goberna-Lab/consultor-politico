@@ -170,6 +170,8 @@ html, body { max-width: 100%; }
   object-position: center;
   z-index: 1;
 }
+/* Retrato (Lincoln close-up) — solo visible en mobile, prominente arriba */
+.hero__character { display: none; position: absolute; z-index: 2; pointer-events: none; }
 .hero__titlewrap {
   display: flex;
   flex-direction: column;
@@ -809,16 +811,20 @@ html, body { max-width: 100%; }
   .wrap { padding-left: 16px; padding-right: 16px; }
   .nav__cta { font-size: 12px; padding: 0 14px; height: 42px; }
 
-  /* HERO mobile — texto sobre fondo (Lincoln) con scrim para legibilidad */
-  .hero { height: auto; min-height: 86vh; overflow: hidden; }
-  .hero__bg { object-position: 72% center; }
-  .hero::before {
-    content: ""; position: absolute; inset: 0; z-index: 2;
-    background: linear-gradient(180deg, rgba(5,8,14,.72) 0%, rgba(5,8,14,.42) 42%, rgba(5,8,14,.88) 100%);
+  /* HERO mobile — retrato (Lincoln) prominente arriba + texto debajo (estilo template) */
+  .hero { height: auto; min-height: auto; overflow: hidden; background: var(--bg); }
+  .hero__bg { display: none; }
+  .hero__character {
+    display: block;
+    top: 56px; left: 0; right: 0;
+    width: 100%;
+    height: min(540px, 132vw);
+    object-fit: cover;
+    object-position: 50% 12%;
   }
-  .hero__strip { display: none; }
-  .hero__wrap { padding-top: 104px; padding-bottom: 40px; gap: 22px; }
-  .hero__content { flex: 1; max-width: none; gap: 18px; }
+  .hero__strip { display: block; height: min(520px, 128vw); }
+  .hero__wrap { padding-top: min(456px, 114vw); padding-bottom: 36px; gap: 22px; }
+  .hero__content { flex: none; max-width: none; gap: 18px; }
   .hero__subtitle { font-size: 16px; }
   .hero__buttons { flex-direction: column; }
   .hero__buttons .btn { width: 100%; min-width: 0; }

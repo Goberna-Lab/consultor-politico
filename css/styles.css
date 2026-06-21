@@ -920,3 +920,16 @@ html, body { max-width: 100%; }
 @media (max-width: 860px) {
   .archivo__grid { height: 380px; gap: 12px; }
 }
+
+/* Laptops / pantallas anchas pero BAJAS (1366x768 con chrome+barra): el hero
+   se comprime para que la barra de info entre en pantalla sin scrollear. */
+@media (min-width: 901px) and (max-height: 820px) {
+  .hero { height: auto; }
+  .hero__wrap { height: auto; padding-top: 86px; padding-bottom: 12px; }
+  .hero__content { flex: 0 1 auto; justify-content: flex-start; gap: 14px; }
+  .hero__title { font-size: clamp(40px, 4.8vw, 66px); }
+  .hero__subtitle { font-size: 16px; max-width: 560px; }
+  .hero__buttons { gap: 12px; }
+  .hero__info { padding: 16px 0 18px; }
+  .hero__info-icon { width: 44px; height: 44px; }
+}

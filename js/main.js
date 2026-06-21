@@ -222,4 +222,10 @@
   } else {
     reveals.forEach(function (el) { el.classList.add('in'); });
   }
+
+  /* ---------- WhatsApp -> evento "Contact" en Meta (detecta el lead del click) ---------- */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+    if (a && window.fbq) { fbq('track', 'Contact'); }
+  });
 })();

@@ -206,7 +206,7 @@ html.js [data-reveal].in{opacity:1;transform:none}
   position:relative;border-radius:var(--radius);overflow:hidden;
   background:var(--card);aspect-ratio:16/9;
 }
-.vf-video video{width:100%;height:100%;object-fit:cover}
+.vf-video video,.vf-video img{width:100%;height:100%;object-fit:cover;display:block}
 
 .vf-right{max-width:520px;width:100%;margin-inline:auto}
 .vf-form-head{text-align:center;margin-bottom:30px}
@@ -699,3 +699,14 @@ html.js [data-reveal].in{opacity:1;transform:none}
   .tab-btns{flex-direction:column}
   .tab-btn{width:100%}
 }
+
+/* WhatsApp flotante */
+.wsp{
+  position:fixed;right:24px;bottom:24px;z-index:90;
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#25D366;color:#fff;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  transition:transform .2s ease;
+}
+.wsp:hover{transform:scale(1.06)}

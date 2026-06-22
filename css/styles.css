@@ -452,23 +452,48 @@ html, body { max-width: 100%; }
 .docentes__carousel { display: flex; align-items: center; gap: 16px; }
 .docentes__track { flex: 1; display: flex; gap: 20px; overflow: hidden; scroll-behavior: smooth; }
 .doc-card {
-  flex: 0 0 calc((100% - 60px) / 4);
+  position: relative;
+  flex: 0 0 calc((100% - 40px) / 3);
   min-width: 0;
-  background: #eef3f1;
-  border-radius: 10px;
+  background: #05080e;
+  border-radius: 12px;
   overflow: hidden;
-  color: #10231f;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
+  cursor: pointer;
+  aspect-ratio: 3 / 4;
 }
-.doc-card__img { display: block; width: 100%; aspect-ratio: 228 / 205; object-fit: cover; object-position: top center; }
-.doc-card__info { padding: 14px 14px 18px; flex: 1; }
-.doc-card__flag { display: inline-block; font-family: var(--font-mont); font-weight: 700; font-size: 11px; color: #10231f; letter-spacing: 1px; }
-.doc-card__name { font-family: var(--font-sora); font-weight: 700; font-size: 14px; color: #10231f; margin-top: 4px; }
-.doc-card__role { font-family: var(--font-mont); font-size: 11px; color: #3a4759; margin-top: 4px; }
-.doc-card__bio { font-family: var(--font-mont); font-size: 10.5px; color: #5a6678; line-height: 1.45; margin-top: 10px; }
-.docentes__foot { display: flex; justify-content: center; margin-top: 40px; }
+.doc-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.doc-card__panel {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 20px 16px;
+  background: linear-gradient(to top, rgba(5, 8, 14, 0.94) 18%, rgba(5, 8, 14, 0) 54%);
+}
+.doc-card__panel::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background: rgba(5, 8, 14, 0.86);
+  opacity: 0; transition: opacity .42s ease;
+}
+.doc-card--open .doc-card__panel::before { opacity: 1; }
+.doc-card__flag { display: inline-block; font-family: var(--font-mont); font-weight: 700; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
+.doc-card__name { font-family: var(--font-sora); font-weight: 700; font-size: 14px; color: #fff; margin-top: 4px; }
+.doc-card__role { font-family: var(--font-mont); font-size: 11px; color: rgba(255, 255, 255, 0.72); margin-top: 4px; }
+.doc-card__bio-wrap {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows .42s cubic-bezier(.22, .61, .36, 1);
+}
+.doc-card--open .doc-card__bio-wrap { grid-template-rows: 1fr; }
+.doc-card__bio {
+  overflow: hidden; min-height: 0; margin: 0; padding-top: 14px;
+  font-family: var(--font-mont); font-size: 12.5px; color: rgba(255, 255, 255, 0.9); line-height: 1.6;
+}
+.docentes__dots { display: flex; justify-content: center; gap: 8px; margin-top: 40px; }
+.docentes__dot {
+  width: 34px; height: 5px; border: 0; padding: 0; border-radius: 3px;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  transition: background .3s ease;
+}
+.docentes__dot--on { background: var(--gold); }
 
 /* ========== PROGRAMA ACADÉMICO ========== */
 .prog { background: #05080e url("../assets/img/plan-bg.png") center / cover no-repeat; padding: var(--sp) 0; }
@@ -622,13 +647,28 @@ html, body { max-width: 100%; }
 .cert__feat-ic { width: 48px; height: 48px; border-radius: 8px; background: var(--gold); flex-shrink: 0; }
 .cert__feat-title { font-family: var(--font-sora); font-weight: 700; font-size: 15px; color: #10231f; }
 .cert__feat-desc { font-family: var(--font-mont); font-size: 13px; color: #3a4759; line-height: 1.45; margin-top: 3px; }
+/* Certificación: imagen clickeable → modal de imagen full */
+.cert__media { flex: 0 0 44%; min-width: 0; align-self: stretch; min-height: 440px; max-height: 520px; position: relative; display: block; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 20px; overflow: hidden; transition: box-shadow .3s ease; }
+.cert__media .cert__img { flex: none; width: 100%; height: 100%; min-height: 0; max-height: none; object-fit: cover; border-radius: 20px; transition: transform .4s ease; }
+.cert__media::after { content: ""; position: absolute; inset: 0; background: rgba(5, 8, 14, 0.45); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+.cert__media:hover { box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5); }
+.cert__media:hover::after { opacity: 1; }
+.cert__media:hover .cert__img { transform: scale(1.04); }
+.cert__media-hint { position: absolute; left: 50%; top: 50%; z-index: 2; transform: translate(-50%, -50%) translateY(8px); padding: 13px 28px; border-radius: 8px; background: var(--gold); color: var(--dark-text); font-family: var(--font-sora); font-weight: 600; font-size: 15px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .3s ease, transform .3s ease; }
+.cert__media:hover .cert__media-hint { opacity: 1; transform: translate(-50%, -50%); }
+/* Modal de imagen del certificado */
+.modal__card--image { max-width: min(1100px, 96vw); width: auto; padding: 0; background: transparent; border: 0; overflow: visible; }
+.cert-modal__img { display: block; width: 100%; max-height: 92vh; object-fit: contain; border-radius: 12px; }
+.modal__card--image .modal__close { top: 12px; right: 12px; z-index: 3; background: rgba(0, 0, 0, 0.6); }
 
 /* ========== INVERSIÓN + CTA ========== */
 .inv { background: #05080e; padding: var(--sp) 0; }
 .inv__cta { font-family: var(--font-sora); font-weight: 800; font-size: 40px; text-align: center; line-height: 1.15; margin-bottom: 16px; }
 .inv__cta-sub { text-align: center; color: var(--white-75); font-size: 16px; line-height: 1.55; max-width: 640px; margin: 0 auto 48px; }
 .inv__cards { display: flex; gap: 24px; align-items: stretch; }
-.inv__price-card { flex: 1; background: #eef3f2; color: #10231f; border-radius: 20px; padding: 36px; display: flex; flex-direction: column; }
+.inv__price-card { position: relative; isolation: isolate; overflow: hidden; flex: 1; background: #eef3f2; color: #10231f; border-radius: 20px; padding: 36px; display: flex; flex-direction: column; }
+.inv__price-card::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: url("../assets/img/fondo-inversion.png") center / cover no-repeat; opacity: 0.25; mix-blend-mode: multiply; }
+.inv__price-card > * { position: relative; z-index: 1; }
 .inv__label { font-weight: 600; font-size: 13px; color: #9a7600; margin-bottom: 18px; }
 .inv__price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 26px; }
 .inv__cur { font-family: var(--font-sora); font-weight: 700; font-size: 18px; }
@@ -870,6 +910,7 @@ html, body { max-width: 100%; }
   /* Certificación */
   .cert__row { flex-direction: column; gap: 30px; }
   .cert__img { min-height: 280px; }
+  .cert__media { flex-basis: auto; min-height: 280px; max-height: none; width: 100%; }
 
   /* Inversión */
   .inv__cards { flex-direction: column; }

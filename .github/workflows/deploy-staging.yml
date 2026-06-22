@@ -1,0 +1,27 @@
+name: Deploy staging (VPS1)
+
+# Staging de consultor.goberna.us en VPS1 (161.132.39.165).
+# Corre en el self-hosted runner del box (vps1-consultor) en cada push a main
+# y sincroniza el árbol del repo al web root /srv/consultor que sirve nginx.
+# Producción (grupogoberna.com) sigue siendo aparte (zip por cPanel).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-staging-consultor
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync a /srv/consultor
+        run: |
+          rsync -a --delete \
+            --exclude='.git' --exclude='.github' \
+            "$GITHUB_WORKSPACE"/ /srv/consultor/
+          echo "Deploy ${GITHUB_SHA::7} -> /srv/consultor (consultor.goberna.us)"

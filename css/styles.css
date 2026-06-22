@@ -518,30 +518,51 @@ html, body { max-width: 100%; }
 
 /* Desktop con mouse: la descripción se oculta y aparece como tooltip moderno al hacer hover en la etapa (en táctil/mobile queda visible inline) */
 @media (hover: hover) and (pointer: fine) and (min-width: 901px) {
-  .metodo__step { cursor: pointer; }
-  .metodo__name { margin-bottom: 0; }
-  .metodo__node { transition: transform .2s ease, box-shadow .2s ease; }
-  .metodo__step:hover .metodo__node { transform: scale(1.08); box-shadow: 0 10px 24px rgba(11, 43, 84, .38); }
+  .metodo__step { cursor: pointer; transition: transform .35s cubic-bezier(.22, 1, .36, 1); }
+  .metodo__step:hover { transform: translateY(-4px); }            /* leve elevación suave */
+  .metodo__name { margin-bottom: 0; transition: color .25s ease; }
+  .metodo__etapa { transition: color .25s ease; }
+  .metodo__node {
+    position: relative;
+    transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s ease;
+  }
+  /* aro dorado que se expande con delicadeza al hacer hover */
+  .metodo__node::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    opacity: 0;
+    transform: scale(.82);
+    transition: opacity .4s ease, transform .45s cubic-bezier(.22, 1, .36, 1);
+    pointer-events: none;
+  }
+  .metodo__step:hover .metodo__node { transform: scale(1.07); box-shadow: 0 14px 30px rgba(11, 43, 84, .38); }
+  .metodo__step:hover .metodo__node::after { opacity: 1; transform: scale(1.1); }
+  .metodo__step:hover .metodo__etapa { color: #9a7600; }
   .metodo__step:hover .metodo__name { color: #0b2b54; }
   .metodo__desc {
     position: absolute;
-    top: calc(100% + 14px);
+    top: calc(100% + 16px);
     left: 50%;
-    width: 232px;
-    max-width: 232px;
+    width: 236px;
+    max-width: 236px;
     background: #0b2b54;
     color: #fff;
     font-size: 13px;
     line-height: 1.55;
     text-align: left;
-    padding: 13px 15px;
+    padding: 14px 16px;
     border-radius: 12px;
-    box-shadow: 0 16px 38px rgba(5, 8, 14, .30);
+    border-top: 2px solid var(--gold);                            /* acento dorado de marca */
+    box-shadow: 0 18px 42px rgba(5, 8, 14, .34);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateX(-50%) translateY(8px);
-    transition: opacity .22s ease, transform .22s ease;
+    transform: translateX(-50%) translateY(10px) scale(.96);
+    transform-origin: top center;
+    transition: opacity .3s ease, transform .42s cubic-bezier(.22, 1, .36, 1), visibility .3s;
     z-index: 30;
   }
   .metodo__desc::before {
@@ -551,13 +572,19 @@ html, body { max-width: 100%; }
     left: 50%;
     transform: translateX(-50%);
     border: 7px solid transparent;
-    border-bottom-color: #0b2b54;
+    border-bottom-color: var(--gold);                            /* flecha dorada, continúa el borde superior */
   }
   .metodo__step:hover .metodo__desc,
   .metodo__step:focus-within .metodo__desc {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  /* respeta a quien prefiere menos movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    .metodo__step, .metodo__node, .metodo__node::after, .metodo__desc { transition: opacity .2s ease; }
+    .metodo__step:hover { transform: none; }
+    .metodo__step:hover .metodo__node::after { transform: scale(1.1); }
   }
 }
 

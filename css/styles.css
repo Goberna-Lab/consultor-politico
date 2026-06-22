@@ -516,6 +516,51 @@ html, body { max-width: 100%; }
 .metodo__name { font-family: var(--font-sora); font-weight: 700; font-size: 20px; color: #10231f; margin-bottom: 14px; }
 .metodo__desc { font-family: var(--font-mont); font-size: 14px; line-height: 1.45; color: #3a4759; max-width: 200px; }
 
+/* Desktop con mouse: la descripción se oculta y aparece como tooltip moderno al hacer hover en la etapa (en táctil/mobile queda visible inline) */
+@media (hover: hover) and (pointer: fine) and (min-width: 901px) {
+  .metodo__step { cursor: pointer; }
+  .metodo__name { margin-bottom: 0; }
+  .metodo__node { transition: transform .2s ease, box-shadow .2s ease; }
+  .metodo__step:hover .metodo__node { transform: scale(1.08); box-shadow: 0 10px 24px rgba(11, 43, 84, .38); }
+  .metodo__step:hover .metodo__name { color: #0b2b54; }
+  .metodo__desc {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    width: 232px;
+    max-width: 232px;
+    background: #0b2b54;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.55;
+    text-align: left;
+    padding: 13px 15px;
+    border-radius: 12px;
+    box-shadow: 0 16px 38px rgba(5, 8, 14, .30);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(8px);
+    transition: opacity .22s ease, transform .22s ease;
+    z-index: 30;
+  }
+  .metodo__desc::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-bottom-color: #0b2b54;
+  }
+  .metodo__step:hover .metodo__desc,
+  .metodo__step:focus-within .metodo__desc {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 /* ========== MIRA EL ENFOQUE EN ACCIÓN ========== */
 .reels { background: linear-gradient(120deg, #070b13 0%, #0b2b54 60%, #070b13 100%); overflow: hidden; }
 .reels__inner { display: flex; align-items: center; gap: 60px; padding: var(--sp) 0; min-height: clamp(420px, 40vw, 520px); }

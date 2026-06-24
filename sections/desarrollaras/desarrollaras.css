@@ -1,37 +1,133 @@
-/* desarrollaras — sección pantalla completa (fondo claro, estética consultor) */
+/* desarrollaras — "La experiencia": War Room cinematográfico + entregables (banda clara) */
 
 .desarrollaras {
-  background: #eef1f0;
-  color: var(--dark-text);
+  /* Sección OSCURA (centro de mando) — corta en seco con la banda clara de "metodo"
+     y baja hasta --bg para enlazar de forma continua con "lograras". */
+  background:
+    radial-gradient(120% 85% at 50% 0%, rgba(11, 43, 84, 0.55) 0%, transparent 60%),
+    linear-gradient(180deg, #0a1322 0%, #070d18 56%, var(--bg) 100%);
+  color: var(--white);
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding: calc(var(--header-h) + 32px) 0 48px;
+  padding: calc(var(--header-h) + clamp(28px, 5vw, 60px)) 0 clamp(56px, 7vw, 96px);
+  border-top: 1px solid rgba(255, 200, 0, 0.16);
 }
-.desarrollaras__inner { display: flex; align-items: center; gap: clamp(40px, 7vw, 110px); width: 100%; }
+.desarrollaras__inner { display: flex; flex-direction: column; gap: clamp(32px, 4.4vw, 58px); width: 100%; }
 
-/* Izquierda: texto + visualización del War Room */
-.desarrollaras__left { flex: 1 1 50%; min-width: 0; display: flex; flex-direction: column; }
-.desarrollaras__label { font-family: var(--font-sora); font-weight: 700; font-size: 13px; letter-spacing: 1px; color: var(--gold-dark); margin-bottom: 20px; }
-.desarrollaras__lead { font-family: var(--font-sora); font-weight: 400; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.32; color: #10231f; margin-bottom: 32px; }
-.desarrollaras__lead strong { font-weight: 800; }
+/* Encabezado de sección */
+.desarrollaras__head { max-width: 820px; }
+.desarrollaras__label { font-family: var(--font-sora); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 18px; }
+.desarrollaras__lead { font-family: var(--font-sora); font-weight: 400; font-size: clamp(21px, 2.3vw, 30px); line-height: 1.34; color: var(--white); }
+.desarrollaras__lead strong { font-weight: 800; color: #fff; }
 
-/* Visualización de la sala (War Room) — solo imagen, sin interacción */
-.desarrollaras__asset { width: 100%; aspect-ratio: 16 / 10; border-radius: 16px; overflow: hidden; background: radial-gradient(135% 130% at 50% 22%, #16273f 0%, #0b1626 60%, #070d18 100%); border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 24px 60px rgba(7, 13, 24, 0.18); }
-.desarrollaras__asset-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+/* Grid principal: War Room (más peso) + card de entregables, mismas alturas */
+.desarrollaras__grid { display: grid; grid-template-columns: 1.32fr 1fr; gap: clamp(24px, 3.2vw, 50px); align-items: stretch; }
 
-/* Derecha: checklist + cierre */
-.desarrollaras__right { flex: 1 1 44%; min-width: 0; align-self: center; }
-.desarrollaras__title { font-family: var(--font-sora); font-weight: 800; font-size: clamp(24px, 2.4vw, 30px); color: #10231f; margin-bottom: 28px; }
-.desarrollaras__list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px; }
-.desarrollaras__item { display: flex; align-items: center; gap: 14px; font-family: var(--font-mont); font-size: 17px; line-height: 1.4; color: #10231f; }
-.desarrollaras__check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--gold); position: relative; }
-.desarrollaras__check::after { content: ""; position: absolute; left: 9px; top: 6px; width: 6px; height: 11px; border: solid #10231f; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
-.desarrollaras__note { font-family: var(--font-mont); font-size: 15px; line-height: 1.7; color: #3a4759; max-width: 460px; }
+/* ============ War Room — panel cinematográfico ============ */
+.desarrollaras__stage {
+  position: relative;
+  margin: 0;
+  min-height: clamp(420px, 42vw, 560px);
+  border-radius: 22px;
+  overflow: hidden;
+  background: radial-gradient(135% 130% at 50% 18%, #1a2e4c 0%, #0d1a2e 60%, #070d18 100%);
+  border: 1px solid rgba(255, 200, 0, 0.18);
+  box-shadow: 0 34px 80px -24px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 70px -12px rgba(11, 43, 84, 0.55);
+  transition: transform .45s cubic-bezier(.2, .7, .2, 1), box-shadow .45s ease;
+}
+/* Glow dorado superior + hairline */
+.desarrollaras__stage::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; z-index: 1;
+  box-shadow: inset 0 1px 0 rgba(255, 200, 0, 0.22);
+  background: radial-gradient(120% 80% at 50% 0%, rgba(255, 200, 0, 0.10) 0%, transparent 55%);
+}
+.desarrollaras__stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 44%; display: block; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.desarrollaras__stage:hover { transform: translateY(-5px); box-shadow: 0 46px 100px -24px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 200, 0, 0.28), 0 0 90px -10px rgba(11, 43, 84, 0.6); }
+.desarrollaras__stage:hover .desarrollaras__stage-img { transform: scale(1.045); }
 
+/* HUD: 4 esquinas tipo centro de mando (CSS puro, sin DOM extra) */
+.desarrollaras__hud {
+  position: absolute; inset: 16px; pointer-events: none; z-index: 2;
+  --c: rgba(255, 200, 0, 0.85); --t: 2px; --l: 24px;
+  background:
+    linear-gradient(var(--c), var(--c)) left top, linear-gradient(var(--c), var(--c)) left top,
+    linear-gradient(var(--c), var(--c)) right top, linear-gradient(var(--c), var(--c)) right top,
+    linear-gradient(var(--c), var(--c)) left bottom, linear-gradient(var(--c), var(--c)) left bottom,
+    linear-gradient(var(--c), var(--c)) right bottom, linear-gradient(var(--c), var(--c)) right bottom;
+  background-repeat: no-repeat;
+  background-size:
+    var(--t) var(--l), var(--l) var(--t), var(--t) var(--l), var(--l) var(--t),
+    var(--t) var(--l), var(--l) var(--t), var(--t) var(--l), var(--l) var(--t);
+}
+
+/* Badge "En vivo" con punto pulsante */
+.desarrollaras__badge {
+  position: absolute; top: 18px; left: 18px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 13px 7px 11px; border-radius: 100px;
+  background: rgba(7, 13, 24, 0.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: var(--font-sora); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #fff;
+}
+.desarrollaras__pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 0 rgba(255, 200, 0, 0.6); animation: dev-pulse 2s infinite; }
+@keyframes dev-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 200, 0, 0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(255, 200, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 200, 0, 0); }
+}
+
+/* Caption inferior con scrim */
+.desarrollaras__caption {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+  padding: 46px 22px 20px; display: flex; flex-direction: column; gap: 3px;
+  background: linear-gradient(to top, rgba(5, 8, 14, 0.92) 0%, rgba(5, 8, 14, 0.6) 45%, transparent 100%);
+}
+.desarrollaras__caption-title { font-family: var(--font-sora); font-weight: 700; font-size: clamp(15px, 1.4vw, 18px); color: #fff; }
+.desarrollaras__caption-sub { font-family: var(--font-mont); font-size: 13px; color: var(--white-75); }
+
+/* ============ Entregables — card claro ============ */
+.desarrollaras__card {
+  background: #ffffff; border-radius: 22px;
+  padding: clamp(24px, 2.3vw, 36px) clamp(22px, 2.1vw, 34px);
+  border: 1px solid rgba(16, 35, 31, 0.06);
+  box-shadow: 0 24px 60px -28px rgba(7, 13, 24, 0.22);
+  display: flex; flex-direction: column;
+}
+.desarrollaras__card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+.desarrollaras__title { font-family: var(--font-sora); font-weight: 800; font-size: clamp(22px, 2.1vw, 28px); color: #10231f; }
+.desarrollaras__count { flex-shrink: 0; font-family: var(--font-sora); font-weight: 700; font-size: 11px; letter-spacing: .5px; text-transform: uppercase; color: var(--gold-dark); background: rgba(255, 200, 0, 0.16); border: 1px solid rgba(255, 200, 0, 0.32); padding: 5px 11px; border-radius: 100px; }
+
+.desarrollaras__list { display: flex; flex-direction: column; gap: 3px; margin-bottom: 18px; }
+.desarrollaras__item { display: flex; align-items: center; gap: 13px; padding: 7px 10px; border-radius: 10px; font-family: var(--font-mont); font-weight: 500; font-size: 16px; line-height: 1.35; color: #10231f; transition: background .2s ease; }
+.desarrollaras__item:hover { background: rgba(16, 35, 31, 0.035); }
+.desarrollaras__item--featured { background: rgba(255, 200, 0, 0.12); font-weight: 700; }
+.desarrollaras__item--featured:hover { background: rgba(255, 200, 0, 0.18); }
+.desarrollaras__check { flex-shrink: 0; width: 25px; height: 25px; border-radius: 50%; background: var(--gold); position: relative; box-shadow: 0 2px 6px rgba(255, 200, 0, 0.35); }
+.desarrollaras__check::after { content: ""; position: absolute; left: 8.5px; top: 5.5px; width: 6px; height: 11px; border: solid #10231f; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+
+.desarrollaras__note { margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(16, 35, 31, 0.08); font-family: var(--font-mont); font-size: 14px; line-height: 1.65; color: #4a5666; }
+
+/* ============ Responsive ============ */
 @media (max-width: 900px) {
   .desarrollaras { min-height: 0; padding: var(--sp) 0; }
-  .desarrollaras__inner { flex-direction: column; gap: 40px; }
-  .desarrollaras__left { max-width: none; }
+  .desarrollaras__grid { grid-template-columns: 1fr; gap: 26px; }
+  .desarrollaras__stage { min-height: 0; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 600px) {
+  .desarrollaras__stage { aspect-ratio: 4 / 3; border-radius: 18px; }
+  .desarrollaras__hud { inset: 12px; --l: 18px; }
+  .desarrollaras__badge { top: 14px; left: 14px; }
+  .desarrollaras__caption { padding: 38px 16px 16px; }
+  .desarrollaras__card { border-radius: 18px; }
+  .desarrollaras__item { font-size: 15px; padding: 6px 8px; }
+}
+
+/* Accesibilidad: respetar reduce-motion */
+@media (prefers-reduced-motion: reduce) {
+  .desarrollaras__stage, .desarrollaras__stage-img { transition: none; }
+  .desarrollaras__stage:hover { transform: none; }
+  .desarrollaras__stage:hover .desarrollaras__stage-img { transform: none; }
+  .desarrollaras__pulse { animation: none; }
 }

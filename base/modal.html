@@ -1,0 +1,78 @@
+  <!-- ============ MODAL FORMULARIO ============ -->
+  <div class="modal" id="form-modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="form-modal-title">
+      <button class="modal__close" type="button" data-close aria-label="Cerrar">&times;</button>
+      <div class="modal__head">
+        <p class="modal__title" id="form-modal-title">¿Quieres información <span class="text-gold">personalizada?</span></p>
+        <p class="modal__subtitle">Déjanos tus datos y nos comunicaremos contigo</p>
+      </div>
+      <form class="mform" id="contact-form" novalidate>
+        <!-- Honeypot anti-spam (debe quedar vacío) -->
+        <div class="mform__hp" aria-hidden="true">
+          <label>No completar<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <input class="mform__field" type="text" name="name" placeholder="Nombres Completos" required minlength="3" maxlength="60" autocomplete="name">
+        <div class="mform__row">
+          <select class="mform__field mform__select" name="pais" required>
+            <option value="" disabled selected>País</option>
+            <option value="Perú">Perú</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="España">España</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Honduras">Honduras</option>
+            <option value="México">México</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Panamá">Panamá</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="República Dominicana">República Dominicana</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <input class="mform__field" type="tel" name="phone" placeholder="Teléfono" required autocomplete="tel">
+        </div>
+        <select class="mform__field mform__select" name="cargo" required>
+          <option value="" disabled selected>Cargo</option>
+          <option value="Consultor / Asesor Político">Consultor / Asesor Político</option>
+          <option value="Equipo de Campaña">Equipo de Campaña</option>
+          <option value="Funcionario Público">Funcionario Público</option>
+          <option value="Analista Político">Analista Político</option>
+          <option value="Comunicador Estratégico">Comunicador Estratégico</option>
+          <option value="Dirigente / Líder de Opinión">Dirigente / Líder de Opinión</option>
+          <option value="Estudiante / Profesional">Estudiante / Profesional</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <input class="mform__field" type="email" name="email" placeholder="Correo Electrónico" required autocomplete="email">
+        <div class="mform__actions">
+          <button type="submit" class="btn btn--primary mform__submit">INSCRÍBETE</button>
+          <a href="assets/brochure-consultor-politico.pdf" class="btn btn--ghost mform__brochure" download target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            BROCHURE
+          </a>
+        </div>
+        <label class="mform__privacy">
+          <input type="checkbox" name="privacy" required>
+          <span>GOBERNA te informa que los datos de carácter personal que nos proporciones en el presente formulario serán tratados exclusivamente por GOBERNA ANALYTICS S.A.C. como responsable de esta web, con la finalidad de entregarte información acerca de este programa.</span>
+        </label>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ MODAL CERTIFICADO (imagen full) ============ -->
+  <div class="modal modal--image" id="cert-modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card modal__card--image" role="dialog" aria-modal="true" aria-label="Certificado en tamaño completo">
+      <button class="modal__close" type="button" data-close aria-label="Cerrar">&times;</button>
+      <img src="assets/img/diploma-certificado.webp" alt="Certificado en tamaño completo" class="cert-modal__img">
+    </div>
+  </div>
+
+  <!-- JS modular: core (config, countdown, nav, modal, form) + handlers por sección -->

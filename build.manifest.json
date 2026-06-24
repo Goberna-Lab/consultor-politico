@@ -1,0 +1,21 @@
+[
+  "base/head.html",
+  "base/nav.html",
+  "sections/hero/hero.html",
+  "sections/sabias/sabias.html",
+  "sections/desafio/desafio.html",
+  "sections/obtendras/obtendras.html",
+  "sections/evo/evo.html",
+  "sections/porque/porque.html",
+  "sections/docentes/docentes.html",
+  "sections/prog/prog.html",
+  "sections/metodo/metodo.html",
+  "sections/lograras/lograras.html",
+  "sections/reels/reels.html",
+  "sections/cert/cert.html",
+  "sections/inv/inv.html",
+  "sections/faqsec/faqsec.html",
+  "base/footer.html",
+  "base/modal.html",
+  "base/tail.html"
+]

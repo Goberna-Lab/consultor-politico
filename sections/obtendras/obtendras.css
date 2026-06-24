@@ -1,0 +1,27 @@
+/* obtendras — generado por refactor modular (verbatim de styles.css) */
+
+.obtendras { background: #05080e url("../../assets/img/programas-bg.webp") center / cover no-repeat; padding: var(--sp) 0; }
+.obtendras__label { font-weight: 600; font-size: 14px; color: var(--gold); text-align: center; margin-bottom: 20px; }
+.obtendras__title { font-weight: 800; font-size: 44px; text-align: center; margin-bottom: 14px; }
+.obtendras__subtitle { text-align: center; color: var(--white-75); font-size: 16px; max-width: 640px; margin: 0 auto 48px; line-height: 1.5; }
+.obt-item__title { font-family: var(--font-sora); font-weight: 700; font-size: 16px; color: var(--white); margin-bottom: 6px; }
+.obtendras__carousel { display: flex; align-items: center; gap: 20px; }
+.obtendras__track { flex: 1; display: flex; gap: 40px; overflow: hidden; scroll-behavior: smooth; }
+.obt-item { flex: 0 0 calc((100% - 80px) / 3); min-width: 0; }
+.obt-item__num { display: block; font-weight: 500; font-size: 28px; color: #e6b400; margin-bottom: 8px; }
+.obt-item__line { position: relative; height: 1px; background: rgba(255, 255, 255, 0.22); margin-bottom: 30px; }
+.obt-item__dot { position: absolute; right: 0; top: 50%; transform: translate(50%, -50%); width: 12px; height: 12px; border-radius: 50%; background: var(--gold); }
+.obt-item__body { display: flex; align-items: flex-start; gap: 18px; }
+.obt-item__icon { width: 48px; height: 48px; flex-shrink: 0; }
+.obt-item__icon--svg { display: flex; align-items: center; justify-content: center; color: var(--gold); }
+.obt-item__text { font-family: var(--font-mont); font-size: 15px; line-height: 1.65; color: #f3f5f8; }
+@media (max-width: 1024px) {
+  .obt-item { flex-basis: calc((100% - 40px) / 2); }
+}
+@media (max-width: 900px) {
+  .obt-item { flex-basis: calc((100% - 40px) / 2); }
+}
+@media (max-width: 600px) {
+  .obt-item { flex-basis: 100%; }
+  .obtendras__title { font-size: 30px; }
+}

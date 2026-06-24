@@ -1,0 +1,24 @@
+/* desafio — generado por refactor modular (verbatim de styles.css) */
+
+.desafio { background: #eef1f0; color: var(--dark-text); }
+.desafio__inner { display: flex; align-items: center; gap: 80px; padding: var(--sp) 0; }
+.desafio__left { flex: 1 1 46%; max-width: 460px; }
+.desafio__label { font-weight: 700; font-size: 13px; letter-spacing: 1px; color: #9a7600; margin-bottom: 28px; }
+.desafio__title { color: #10231f; line-height: 1.04; margin-bottom: 26px; }
+.desafio__title span { font-weight: 600; font-size: clamp(28px, 2.6vw, 36px); }
+.desafio__title strong { font-weight: 800; font-size: clamp(32px, 3.2vw, 44px); }
+.desafio__text { font-family: var(--font-mont); font-size: 16px; line-height: 1.75; color: #202d3a; }
+.desafio__text strong { font-weight: 700; }
+.desafio__image { flex: 1 1 50%; min-width: 0; max-width: 642px; aspect-ratio: 642 / 668; border-radius: 4px; object-fit: cover; }
+.desafio__left .desafio__text + .desafio__text { margin-top: 16px; }
+.desafio__video { flex: 1 1 50%; min-width: 0; max-width: 642px; position: relative; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; border: 1px solid rgba(154, 118, 0, 0.35); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22); background: #000; }
+.desafio__video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 900px) {
+  .desafio__inner { flex-direction: column; gap: 40px; padding: var(--sp) 0; }
+  .desafio__left { max-width: none; }
+  .desafio__image { width: 100%; max-width: none; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 600px) {
+  .desafio__title span { font-size: 34px; }
+  .desafio__title strong { font-size: 40px; }
+}

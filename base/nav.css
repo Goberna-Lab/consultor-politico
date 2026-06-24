@@ -1,0 +1,78 @@
+/* nav — generado por refactor modular (verbatim de styles.css) */
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: 80px;
+  background: rgba(5, 8, 14, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.nav__wrap {
+  max-width: 1366px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.nav__logo { display: flex; align-items: center; }
+.nav__logo img { width: 38px; height: 44px; max-width: none; flex-shrink: 0; }
+.nav__center {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav__links {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2.5vw, 34px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.nav__info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity .35s ease, transform .35s ease;
+}
+.nav__info-item { display: flex; align-items: center; gap: 9px; }
+.nav__info-icon { width: 30px; height: 30px; flex-shrink: 0; }
+.nav__info-text { display: flex; flex-direction: column; line-height: 1.15; white-space: nowrap; }
+.nav__info-label { font-family: var(--font-mont); font-weight: 700; font-size: 13px; color: var(--white); }
+.nav__info-value { font-family: var(--font-mont); font-weight: 500; font-size: 12px; color: var(--white-75); }
+.nav--scrolled .nav__links { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.nav--scrolled .nav__info { opacity: 1; transform: none; pointer-events: auto; }
+.nav__link {
+  font-family: var(--font-sora);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: var(--white);
+  transition: color .25s ease;
+}
+.nav__link:hover { color: var(--gold); }
+.nav__link--active { color: var(--gold); }
+.nav__cta { font-size: 14px; padding: 0 22px; }
+@media (max-width: 900px) {
+  .nav__center { display: none; }
+}
+@media (max-width: 600px) {
+  .nav__cta { font-size: 12px; padding: 0 14px; height: 42px; }
+}

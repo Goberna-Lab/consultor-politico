@@ -1,0 +1,43 @@
+/* porque — generado por refactor modular (verbatim de styles.css) */
+
+.porque { background: #05080e url("../../assets/img/plan-bg.webp") center / cover no-repeat; padding: var(--sp) 0; }
+.porque__title { font-weight: 800; font-size: 44px; text-align: center; line-height: 1.1; margin-bottom: 48px; }
+.porque__title .text-gold { font-weight: 700; }
+.porque__tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin-bottom: 46px; }
+.porque__tab {
+  font-family: var(--font-sora);
+  font-size: 14px;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.porque__tab--active { background: var(--gold); color: #000; font-weight: 600; }
+.porque__panel {
+  display: none;
+  align-items: center;
+  gap: 40px;
+  background: rgba(255, 200, 0, 0.05);
+  border-radius: 16px;
+  padding: 40px;
+}
+.porque__panel--active { display: flex; }
+.porque__img { width: clamp(280px, 32vw, 380px); aspect-ratio: 1; border-radius: 8px; flex-shrink: 0; object-fit: cover; }
+.porque__divider { width: 2px; align-self: stretch; background: var(--gold); flex-shrink: 0; }
+.porque__content { flex: 1; }
+.porque__heading { font-family: var(--font-sora); font-weight: 600; font-size: 28px; color: var(--gold); line-height: 1.2; margin-bottom: 18px; }
+.porque__text { font-family: var(--font-mont); font-size: 16px; line-height: 1.7; color: var(--white); }
+@media (max-width: 900px) {
+  .porque__panel { flex-direction: column; gap: 28px; }
+  .porque__divider { display: none; }
+  .porque__img { width: 100%; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 600px) {
+  .porque__title { font-size: 30px; }
+  .porque__tab { padding: 10px 18px; font-size: 13px; }
+  .porque__panel { padding: 26px 22px; }
+  .porque__heading { font-size: 22px; margin-bottom: 14px; }
+}

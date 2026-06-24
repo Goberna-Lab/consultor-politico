@@ -1,0 +1,12 @@
+/* lograras — generado por refactor modular (verbatim de styles.css) */
+
+.lograras { background: var(--bg); padding: var(--sp) 0; }
+.lograras__title { font-family: var(--font-sora); font-weight: 800; font-size: clamp(28px, 4.2vw, 44px); text-align: center; line-height: 1.1; margin-bottom: 14px; }
+.lograras__subtitle { text-align: center; color: var(--white-75); font-size: 16px; max-width: 640px; margin: 0 auto 48px; line-height: 1.5; }
+.lograras__list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 40px; max-width: 920px; margin: 0 auto; }
+.lograras__item { display: flex; align-items: flex-start; gap: 14px; font-family: var(--font-mont); font-size: 16px; line-height: 1.5; color: var(--white); }
+.lograras__check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--gold); position: relative; margin-top: 1px; }
+.lograras__check::after { content: ""; position: absolute; left: 9px; top: 5px; width: 6px; height: 11px; border: solid #000; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+@media (max-width: 600px) {
+  .lograras__list { grid-template-columns: 1fr; gap: 14px; }
+}

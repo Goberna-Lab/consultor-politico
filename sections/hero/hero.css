@@ -1,0 +1,141 @@
+/* hero — generado por refactor modular (verbatim de styles.css) */
+
+.hero {
+  position: relative;
+  width: 100%;
+  /* El hero replica el fondo del Figma a 16:9 (1921x1081): se ve la imagen COMPLETA,
+     sin el tope de altura que recortaba la cabeza en pantallas anchas. */
+  aspect-ratio: 1921 / 1081;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--bg);   /* banda detrás del navbar fijo cuando el banner baja */
+}
+.hero__bg {
+  position: absolute;
+  top: var(--header-h);    /* el banner arranca debajo del header, no tapado por él */
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+.hero__character { display: none; position: absolute; z-index: 2; pointer-events: none; }
+.hero__titlewrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hero__eyebrow {
+  font-family: var(--font-sora);
+  font-weight: 700;
+  font-size: clamp(13px, 1.05vw, 16px);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+.hero__strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(5, 8, 14, 0.75) 55%, var(--bg) 100%);
+  z-index: 3;
+}
+.hero__wrap {
+  position: relative;
+  z-index: 4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}
+.hero__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  max-width: 600px;
+}
+.hero__title {
+  font-family: var(--font-sora);
+  font-weight: 800;
+  font-size: clamp(40px, 5.9vw, 86px);
+  line-height: 0.98;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0;
+}
+.hero__subtitle {
+  font-family: var(--font-sora);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--white);
+  max-width: 468px;   /* columna izquierda limpia: no se monta sobre Lincoln */
+}
+.hero__buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.hero__buttons .btn { min-width: 240px; }
+.hero__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0 30px;
+}
+.hero__info-item { display: flex; align-items: center; gap: 12px; }
+.hero__info-icon { width: 48px; height: 48px; flex-shrink: 0; }
+.hero__info-text { display: flex; flex-direction: column; line-height: 1.25; white-space: nowrap; }
+.hero__info-label { font-family: var(--font-mont); font-weight: 700; font-size: 16px; }
+.hero__info-value { font-family: var(--font-mont); font-weight: 500; font-size: 15px; color: var(--white-75); }
+@media (max-width: 900px) {
+  .hero { aspect-ratio: auto; height: auto; min-height: 600px; }
+  .hero__wrap { padding-bottom: 24px; }
+  .hero__bg { object-position: 70% center; top: 0; }
+  .hero__info { flex-wrap: wrap; gap: 18px 30px; }
+}
+@media (max-width: 600px) {
+  .hero { height: auto; min-height: auto; overflow: hidden; background: var(--bg); }
+  .hero__bg { display: none; }
+  .hero__character {
+    display: block;
+    top: 56px; left: 0; right: 0;
+    width: 100%;
+    height: min(540px, 132vw);
+    object-fit: cover;
+    object-position: 50% 12%;
+  }
+  .hero__strip { display: block; height: min(520px, 128vw); }
+  .hero__wrap { padding-top: min(456px, 114vw); padding-bottom: 36px; gap: 22px; }
+  .hero__content { flex: none; max-width: none; gap: 18px; }
+  .hero__subtitle { font-size: 16px; }
+  .hero__buttons { flex-direction: column; }
+  .hero__buttons .btn { width: 100%; min-width: 0; }
+  .hero__info { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 14px; }
+  .hero__info-item { align-items: flex-start; }
+  .hero__info-text { white-space: normal; }
+  .hero__info-value { white-space: normal; line-height: 1.25; }
+  .hero__info-item:nth-child(1) { order: 1; }
+  .hero__info-item:nth-child(2) { order: 3; }
+  .hero__info-item:nth-child(3) { order: 2; }
+  .hero__info-item:nth-child(4) { order: 4; }
+}
+@media (min-width: 901px) and (max-height: 820px) {
+  .hero { aspect-ratio: auto; min-height: 0; height: auto; }
+  .hero__wrap { height: auto; padding-top: 86px; padding-bottom: 12px; }
+  .hero__content { flex: 0 1 auto; justify-content: flex-start; gap: 14px; }
+  .hero__title { font-size: clamp(40px, 4.8vw, 66px); }
+  .hero__subtitle { font-size: 16px; max-width: 560px; }
+  .hero__buttons { gap: 12px; }
+  .hero__info { padding: 16px 0 18px; }
+  .hero__info-icon { width: 44px; height: 44px; }
+}

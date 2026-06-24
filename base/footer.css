@@ -1,0 +1,24 @@
+/* footer — generado por refactor modular (verbatim de styles.css) */
+
+.footer { background: #03060b; padding: var(--sp) 0 28px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.footer__inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 30px; }
+.footer__brand { max-width: 320px; }
+.footer__logo-wrap { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.footer__logo { width: 38px; height: 44px; }
+.footer__name { font-family: var(--font-sora); font-weight: 800; font-size: 20px; letter-spacing: 1px; color: var(--white); }
+.footer__tag { font-family: var(--font-mont); font-size: 13px; color: var(--white-75); line-height: 1.6; }
+.footer__col-title { font-family: var(--font-sora); font-weight: 600; font-size: 15px; color: var(--white); margin-bottom: 14px; }
+.footer__links { display: flex; flex-direction: column; gap: 10px; }
+.footer__links a { font-family: var(--font-mont); font-size: 14px; color: var(--white-75); transition: color .2s ease; }
+.footer__links a:hover { color: var(--gold); }
+.footer__contact { display: flex; flex-direction: column; gap: 10px; }
+.footer__wsp { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mont); font-size: 14px; color: var(--white-75); transition: color .2s ease; }
+.footer__wsp svg { flex-shrink: 0; color: #25D366; }
+.footer__wsp:hover { color: var(--gold); }
+.footer__copy { text-align: center; font-family: var(--font-mont); font-size: 12px; color: var(--white-50); padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+@media (max-width: 900px) {
+  .footer__inner { flex-direction: column; gap: 24px; }
+}
+@media (max-width: 600px) {
+  .footer__brand { max-width: none; }
+}

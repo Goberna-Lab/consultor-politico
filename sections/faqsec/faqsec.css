@@ -1,0 +1,18 @@
+/* faqsec — generado por refactor modular (verbatim de styles.css) */
+
+.faqsec { background: var(--bg); padding: var(--sp) 0; }
+.faqsec__title { font-family: var(--font-sora); font-weight: 800; font-size: clamp(28px, 4.2vw, 44px); text-align: center; line-height: 1.1; margin-bottom: 46px; }
+.faq { max-width: 860px; margin: 0 auto; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; overflow: hidden; }
+.faq__item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.faq__item:last-child { border-bottom: none; }
+.faq__question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; text-align: left; background: transparent; border: none; cursor: pointer; padding: 22px 26px; font-family: var(--font-sora); font-weight: 600; font-size: 16px; color: var(--white); line-height: 1.35; transition: color .2s ease; }
+.faq__question:hover { color: var(--gold); }
+.faq__icon { flex-shrink: 0; font-size: 26px; line-height: 1; color: var(--gold); }
+.faq__answer { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq__answer p { padding: 0 26px 22px; font-family: var(--font-mont); font-size: 15px; line-height: 1.65; color: var(--white-75); margin: 0; }
+.faq__item--open .faq__question { color: var(--gold); }
+.faq__item--open .faq__answer { max-height: 400px; }
+@media (max-width: 600px) {
+  .faq__question { padding: 18px 18px; font-size: 15px; }
+  .faq__answer p { padding: 0 18px 18px; }
+}

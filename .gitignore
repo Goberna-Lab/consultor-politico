@@ -2,6 +2,9 @@
 assets/_inbox/
 .playwright-mcp/
 *.log
+# Capturas de QA (no son assets del sitio)
+/qa-*.png
+/perfil-desktop.png
 
 # OS
 .DS_Store

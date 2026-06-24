@@ -1,0 +1,12 @@
+/* dirigido — ¿Para quién es este diploma? (perfil de ingreso) */
+
+.dirigido { background: var(--bg); padding: var(--sp) 0; }
+.dirigido__label { font-family: var(--font-sora); font-weight: 600; font-size: 14px; color: var(--gold); text-align: center; margin-bottom: 16px; }
+.dirigido__title { font-family: var(--font-sora); font-weight: 800; font-size: clamp(28px, 4vw, 44px); text-align: center; line-height: 1.1; margin-bottom: 18px; }
+.dirigido__lead { text-align: center; color: var(--white-75); font-family: var(--font-mont); font-size: 16px; line-height: 1.65; max-width: 720px; margin: 0 auto 48px; }
+.dirigido__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 16px; max-width: 960px; margin: 0 auto; }
+.dirigido__item { display: flex; align-items: center; gap: 14px; padding: 18px 22px; border: 1px solid rgba(255, 200, 0, 0.25); border-radius: 12px; background: rgba(255, 200, 0, 0.04); font-family: var(--font-mont); font-size: 15px; line-height: 1.35; color: var(--white); }
+.dirigido__ic { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--gold); position: relative; }
+.dirigido__ic::after { content: ""; position: absolute; left: 7px; top: 5px; width: 5px; height: 9px; border: solid #000; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.dirigido__note { text-align: center; color: var(--white-75); font-family: var(--font-mont); font-size: 15px; line-height: 1.7; max-width: 700px; margin: 44px auto 0; }
+.dirigido__note strong { color: var(--white); font-weight: 700; }

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Foto próximamente">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c1626"/>
+      <stop offset="1" stop-color="#070b13"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="600" fill="url(#bg)"/>
+  <g fill="#1d2c44">
+    <circle cx="240" cy="226" r="84"/>
+    <path d="M108 474c0-76 59-130 132-130s132 54 132 130v34H108z"/>
+  </g>
+  <text x="240" y="556" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="600" font-size="21" letter-spacing="3" fill="#ffc800" opacity="0.55">FOTO PRÓXIMAMENTE</text>
+</svg>

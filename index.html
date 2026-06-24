@@ -32,28 +32,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Preload del personaje del hero (LCP) -->
+  <link rel="preload" as="image" href="assets/img/inversion-persona.webp" fetchpriority="high">
   <!-- CSS modular: base compartida + una hoja por sección (sin build) -->
-  <link rel="stylesheet" href="base/base.css?v=v3-12">
-  <link rel="stylesheet" href="base/nav.css?v=v3-12">
-  <link rel="stylesheet" href="base/wsp.css?v=v3-12">
-  <link rel="stylesheet" href="sections/hero/hero.css?v=v3-12">
-  <link rel="stylesheet" href="sections/sabias/sabias.css?v=v3-12">
-  <link rel="stylesheet" href="sections/desafio/desafio.css?v=v3-12">
-  <link rel="stylesheet" href="sections/obtendras/obtendras.css?v=v3-12">
-  <link rel="stylesheet" href="sections/evo/evo.css?v=v3-12">
-  <link rel="stylesheet" href="sections/porque/porque.css?v=v3-12">
-  <link rel="stylesheet" href="sections/dirigido/dirigido.css?v=v3-12">
-  <link rel="stylesheet" href="sections/docentes/docentes.css?v=v3-12">
-  <link rel="stylesheet" href="sections/prog/prog.css?v=v3-12">
-  <link rel="stylesheet" href="sections/metodo/metodo.css?v=v3-12">
-  <link rel="stylesheet" href="sections/desarrollaras/desarrollaras.css?v=v3-12">
-  <link rel="stylesheet" href="sections/reels/reels.css?v=v3-12">
-  <link rel="stylesheet" href="sections/cert/cert.css?v=v3-12">
-  <link rel="stylesheet" href="sections/inv/inv.css?v=v3-12">
-  <link rel="stylesheet" href="sections/lograras/lograras.css?v=v3-12">
-  <link rel="stylesheet" href="sections/faqsec/faqsec.css?v=v3-12">
-  <link rel="stylesheet" href="base/footer.css?v=v3-12">
-  <link rel="stylesheet" href="base/modal.css?v=v3-12">
+  <link rel="stylesheet" href="base/base.css?v=v3-14">
+  <link rel="stylesheet" href="base/nav.css?v=v3-14">
+  <link rel="stylesheet" href="base/wsp.css?v=v3-14">
+  <link rel="stylesheet" href="sections/hero/hero.css?v=v3-14">
+  <link rel="stylesheet" href="sections/sabias/sabias.css?v=v3-14">
+  <link rel="stylesheet" href="sections/desafio/desafio.css?v=v3-14">
+  <link rel="stylesheet" href="sections/obtendras/obtendras.css?v=v3-14">
+  <link rel="stylesheet" href="sections/evo/evo.css?v=v3-14">
+  <link rel="stylesheet" href="sections/porque/porque.css?v=v3-14">
+  <link rel="stylesheet" href="sections/dirigido/dirigido.css?v=v3-14">
+  <link rel="stylesheet" href="sections/docentes/docentes.css?v=v3-14">
+  <link rel="stylesheet" href="sections/prog/prog.css?v=v3-14">
+  <link rel="stylesheet" href="sections/metodo/metodo.css?v=v3-14">
+  <link rel="stylesheet" href="sections/desarrollaras/desarrollaras.css?v=v3-14">
+  <link rel="stylesheet" href="sections/reels/reels.css?v=v3-14">
+  <link rel="stylesheet" href="sections/cert/cert.css?v=v3-14">
+  <link rel="stylesheet" href="sections/inv/inv.css?v=v3-14">
+  <link rel="stylesheet" href="sections/lograras/lograras.css?v=v3-14">
+  <link rel="stylesheet" href="sections/faqsec/faqsec.css?v=v3-14">
+  <link rel="stylesheet" href="base/footer.css?v=v3-14">
+  <link rel="stylesheet" href="base/modal.css?v=v3-14">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -78,7 +80,7 @@
   <header class="nav" id="nav">
     <div class="nav__wrap">
       <a href="#hero" class="nav__logo">
-        <img src="assets/escudo.svg" alt="GOBERNA">
+        <img decoding="async" src="assets/escudo.svg" alt="GOBERNA">
       </a>
       <div class="nav__center">
         <nav class="nav__links">
@@ -91,19 +93,19 @@
         </nav>
         <div class="nav__info" aria-hidden="true">
           <div class="nav__info-item">
-            <img src="assets/img/ico-modalidad.svg" alt="" class="nav__info-icon">
+            <img decoding="async" src="assets/img/ico-modalidad.svg" alt="" class="nav__info-icon">
             <div class="nav__info-text"><span class="nav__info-label">Modalidad</span><span class="nav__info-value">Online</span></div>
           </div>
           <div class="nav__info-item">
-            <img src="assets/img/ico-hora.svg" alt="" class="nav__info-icon">
+            <img decoding="async" src="assets/img/ico-hora.svg" alt="" class="nav__info-icon">
             <div class="nav__info-text"><span class="nav__info-label">Hora</span><span class="nav__info-value">19:00–21:00 (UTC-5)</span></div>
           </div>
           <div class="nav__info-item">
-            <img src="assets/img/ico-fecha.svg" alt="" class="nav__info-icon">
+            <img decoding="async" src="assets/img/ico-fecha.svg" alt="" class="nav__info-icon">
             <div class="nav__info-text"><span class="nav__info-label">Fecha</span><span class="nav__info-value">Lunes 29 de Junio</span></div>
           </div>
           <div class="nav__info-item">
-            <img src="assets/img/ico-duracion.svg" alt="" class="nav__info-icon">
+            <img decoding="async" src="assets/img/ico-duracion.svg" alt="" class="nav__info-icon">
             <div class="nav__info-text"><span class="nav__info-label">Duración</span><span class="nav__info-value">10 módulos · 4 semanas</span></div>
           </div>
         </div>
@@ -114,8 +116,8 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <img src="assets/img/hero-bg-overlay.webp" alt="" class="hero__bg">
-    <img src="assets/img/inversion-persona.webp" alt="" class="hero__character">
+    <img decoding="async" src="assets/img/hero-bg-overlay.webp" alt="" class="hero__bg">
+    <img decoding="async" fetchpriority="high" src="assets/img/inversion-persona.webp" alt="" class="hero__character">
     <div class="hero__strip"></div>
 
     <div class="hero__wrap wrap">
@@ -141,28 +143,28 @@
 
       <div class="hero__info">
         <div class="hero__info-item">
-          <img src="assets/img/ico-modalidad.svg" alt="" class="hero__info-icon">
+          <img decoding="async" src="assets/img/ico-modalidad.svg" alt="" class="hero__info-icon">
           <div class="hero__info-text">
             <span class="hero__info-label">Modalidad</span>
             <span class="hero__info-value">Online</span>
           </div>
         </div>
         <div class="hero__info-item">
-          <img src="assets/img/ico-hora.svg" alt="" class="hero__info-icon">
+          <img decoding="async" src="assets/img/ico-hora.svg" alt="" class="hero__info-icon">
           <div class="hero__info-text">
             <span class="hero__info-label">Hora</span>
             <span class="hero__info-value">19:00–21:00 (UTC-5)</span>
           </div>
         </div>
         <div class="hero__info-item">
-          <img src="assets/img/ico-fecha.svg" alt="" class="hero__info-icon">
+          <img decoding="async" src="assets/img/ico-fecha.svg" alt="" class="hero__info-icon">
           <div class="hero__info-text">
             <span class="hero__info-label">Fecha</span>
             <span class="hero__info-value">Lunes 29 de Junio</span>
           </div>
         </div>
         <div class="hero__info-item">
-          <img src="assets/img/ico-duracion.svg" alt="" class="hero__info-icon">
+          <img decoding="async" src="assets/img/ico-duracion.svg" alt="" class="hero__info-icon">
           <div class="hero__info-text">
             <span class="hero__info-label">Duración</span>
             <span class="hero__info-value">10 módulos · 4 semanas</span>
@@ -180,7 +182,7 @@
   <!-- ============ ¿SABÍAS QUÉ? ============ -->
   <section class="sabias" id="sobre">
     <div class="wrap sabias__inner">
-      <div class="sabias__circle"><img src="assets/img/foto-libros-globo.webp" alt="" class="sabias__circle-img"></div>
+      <div class="sabias__circle"><img loading="lazy" decoding="async" src="assets/img/foto-libros-globo.webp" alt="" class="sabias__circle-img"></div>
       <div class="sabias__divider"></div>
       <div class="sabias__content">
         <p class="sabias__label">¿SABÍAS QUÉ?</p>
@@ -235,7 +237,7 @@
             <span class="obt-item__num">01</span>
             <div class="obt-item__line"><span class="obt-item__dot"></span></div>
             <div class="obt-item__body">
-              <img src="assets/img/icon-card-metodologia.svg" alt="" class="obt-item__icon">
+              <img loading="lazy" decoding="async" src="assets/img/icon-card-metodologia.svg" alt="" class="obt-item__icon">
               <div>
                 <p class="obt-item__title">Diseñar estrategias ganadoras</p>
                 <p class="obt-item__text">Aprende a transformar diagnósticos políticos en planes de campaña capaces de movilizar electores, construir liderazgo y alcanzar objetivos concretos.</p>
@@ -246,7 +248,7 @@
             <span class="obt-item__num">02</span>
             <div class="obt-item__line"><span class="obt-item__dot"></span></div>
             <div class="obt-item__body">
-              <img src="assets/img/icon-card-casos.svg" alt="" class="obt-item__icon">
+              <img loading="lazy" decoding="async" src="assets/img/icon-card-casos.svg" alt="" class="obt-item__icon">
               <div>
                 <p class="obt-item__title">Interpretar terreno electoral</p>
                 <p class="obt-item__text">Domina herramientas de inteligencia política, análisis territorial y cartografía electoral para identificar oportunidades y riesgos.</p>
@@ -257,7 +259,7 @@
             <span class="obt-item__num">03</span>
             <div class="obt-item__line"><span class="obt-item__dot"></span></div>
             <div class="obt-item__body">
-              <img src="assets/img/icon-card-docentes.svg" alt="" class="obt-item__icon">
+              <img loading="lazy" decoding="async" src="assets/img/icon-card-docentes.svg" alt="" class="obt-item__icon">
               <div>
                 <p class="obt-item__title">Dirigir campañas bajo presión</p>
                 <p class="obt-item__text">Entrena la toma de decisiones en escenarios de incertidumbre, crisis mediáticas, conflictos políticos y competencia permanente.</p>
@@ -301,7 +303,7 @@
             <div class="evo-card__head"><span class="evo-card__num">01</span><span class="evo-card__name">Tu rol</span></div>
             <p class="evo-card__heading">Asume tu lugar dentro de un comando electoral</p>
             <div class="evo-card__body">
-              <img class="evo-card__img" src="assets/img/foto-orador-auditorio.webp" alt="Comando electoral">
+              <img loading="lazy" decoding="async" class="evo-card__img" src="assets/img/foto-orador-auditorio.webp" alt="Comando electoral">
               <p class="evo-card__text">Identifica tus fortalezas y asume una función dentro de un comando electoral profesional.</p>
             </div>
           </article>
@@ -309,7 +311,7 @@
             <div class="evo-card__head"><span class="evo-card__num">02</span><span class="evo-card__name">Tu entrenamiento</span></div>
             <p class="evo-card__heading">Domina el método del consultor político</p>
             <div class="evo-card__body">
-              <img class="evo-card__img" src="assets/img/foto-tablero-electoral.webp" alt="Entrenamiento estratégico">
+              <img loading="lazy" decoding="async" class="evo-card__img" src="assets/img/foto-tablero-electoral.webp" alt="Entrenamiento estratégico">
               <p class="evo-card__text">Aprende inteligencia política, estrategia, territorio, liderazgo, comunicación y dirección de campañas.</p>
             </div>
           </article>
@@ -317,7 +319,7 @@
             <div class="evo-card__head"><span class="evo-card__num">03</span><span class="evo-card__name">Tu transformación</span></div>
             <p class="evo-card__heading">Compite en escenarios reales de poder</p>
             <div class="evo-card__body">
-              <img class="evo-card__img" src="assets/img/foto-estratega-capitolio.webp" alt="Estratega frente al Capitolio">
+              <img loading="lazy" decoding="async" class="evo-card__img" src="assets/img/foto-estratega-capitolio.webp" alt="Estratega frente al Capitolio">
               <p class="evo-card__text">Diseña, defiende y ejecuta una campaña integral capaz de competir en escenarios reales de poder.</p>
             </div>
           </article>
@@ -341,7 +343,7 @@
       </div>
 
       <div class="porque__panel porque__panel--active" data-panel="perfil">
-        <img class="porque__img" src="assets/img/foto-orador-auditorio.webp" alt="Profesional estratégico de alto impacto">
+        <img loading="lazy" decoding="async" class="porque__img" src="assets/img/foto-orador-auditorio.webp" alt="Profesional estratégico de alto impacto">
         <div class="porque__divider"></div>
         <div class="porque__content">
           <h3 class="porque__heading">El egresado del Diploma Internacional del Consultor Político</h3>
@@ -349,7 +351,7 @@
         </div>
       </div>
       <div class="porque__panel" data-panel="campo">
-        <img class="porque__img" src="assets/img/foto-edificio-gob.webp" alt="Campo laboral político en expansión">
+        <img loading="lazy" decoding="async" class="porque__img" src="assets/img/foto-edificio-gob.webp" alt="Campo laboral político en expansión">
         <div class="porque__divider"></div>
         <div class="porque__content">
           <h3 class="porque__heading">Un campo laboral en expansión</h3>
@@ -357,7 +359,7 @@
         </div>
       </div>
       <div class="porque__panel" data-panel="competencia">
-        <img class="porque__img" src="assets/img/foto-handshake.webp" alt="Competencias del consultor político">
+        <img loading="lazy" decoding="async" class="porque__img" src="assets/img/foto-handshake.webp" alt="Competencias del consultor político">
         <div class="porque__divider"></div>
         <div class="porque__content">
           <h3 class="porque__heading">Competencias del egresado</h3>
@@ -365,7 +367,7 @@
         </div>
       </div>
       <div class="porque__panel" data-panel="bolsa">
-        <img class="porque__img" src="assets/img/foto-equipo-dashboards.webp" alt="Bolsa de trabajo y oportunidades laborales">
+        <img loading="lazy" decoding="async" class="porque__img" src="assets/img/foto-equipo-dashboards.webp" alt="Bolsa de trabajo y oportunidades laborales">
         <div class="porque__divider"></div>
         <div class="porque__content">
           <h3 class="porque__heading">Bolsa de trabajo y oportunidades</h3>
@@ -403,7 +405,7 @@
       <div class="docentes__carousel">
         <div class="docentes__track" id="docentes-track">
           <article class="doc-card">
-            <img class="doc-card__img" src="assets/img/docente-roberto-bazan.webp" alt="Roberto Bazán">
+            <img loading="lazy" decoding="async" class="doc-card__img" src="assets/img/docente-roberto-bazan.webp" alt="Roberto Bazán">
             <div class="doc-card__panel">
               <div class="doc-card__info">
                 <span class="doc-card__flag">PERÚ</span>
@@ -415,7 +417,7 @@
           </article>
           <!-- Foto pendiente: reemplazar src por la foto real de Juan de Dios Páramo (assets/img/docente-juan-de-dios-paramo.webp) -->
           <article class="doc-card">
-            <img class="doc-card__img" src="assets/img/docente-placeholder.svg" alt="Juan de Dios Páramo">
+            <img loading="lazy" decoding="async" class="doc-card__img" src="assets/img/docente-placeholder.svg" alt="Juan de Dios Páramo">
             <div class="doc-card__panel">
               <div class="doc-card__info">
                 <span class="doc-card__flag">MÉXICO</span>
@@ -427,7 +429,7 @@
           </article>
           <!-- Foto pendiente: reemplazar src por la foto real de Eduardo Velandia (assets/img/docente-eduardo-velandia.webp) -->
           <article class="doc-card">
-            <img class="doc-card__img" src="assets/img/docente-placeholder.svg" alt="Eduardo Velandia">
+            <img loading="lazy" decoding="async" class="doc-card__img" src="assets/img/docente-placeholder.svg" alt="Eduardo Velandia">
             <div class="doc-card__panel">
               <div class="doc-card__info">
                 <span class="doc-card__flag">COLOMBIA</span>
@@ -580,12 +582,9 @@
       <div class="desarrollaras__left">
         <p class="desarrollaras__label">// LA EXPERIENCIA</p>
         <p class="desarrollaras__lead">El resultado es una <strong>experiencia inmersiva</strong> donde cada participante <strong>aprende a actuar como un consultor político profesional</strong> y no solo a estudiar teoría política.</p>
-        <!-- Espacio reservado para un asset (imagen/video). Reemplazar este div por un <img class="desarrollaras__asset-img" src="..."> cuando esté disponible. -->
-        <div class="desarrollaras__asset" role="img" aria-label="Espacio para asset">
-          <span class="desarrollaras__asset-hint">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L4 21"/></svg>
-            Espacio para asset
-          </span>
+        <!-- Visualización de la sala (War Room de GOBERNA) — solo imagen -->
+        <div class="desarrollaras__asset">
+          <img class="desarrollaras__asset-img" src="assets/img/warroom-sala.webp" alt="War Room — centro de operaciones de campaña de GOBERNA" loading="lazy">
         </div>
       </div>
       <div class="desarrollaras__right">
@@ -633,9 +632,9 @@
       </div>
       <div class="reels__right">
         <div class="archivo__grid">
-          <img class="archivo__img archivo__img--a" src="assets/img/foto-orador-auditorio.webp" alt="Liderazgo y comunicación política">
-          <img class="archivo__img archivo__img--b" src="assets/img/foto-ajedrez.webp" alt="Estrategia política">
-          <img class="archivo__img archivo__img--c" src="assets/img/foto-mapa-mundial.webp" alt="Inteligencia y panorama global">
+          <img loading="lazy" decoding="async" class="archivo__img archivo__img--a" src="assets/img/foto-orador-auditorio.webp" alt="Liderazgo y comunicación política">
+          <img loading="lazy" decoding="async" class="archivo__img archivo__img--b" src="assets/img/foto-ajedrez.webp" alt="Estrategia política">
+          <img loading="lazy" decoding="async" class="archivo__img archivo__img--c" src="assets/img/foto-mapa-mundial.webp" alt="Inteligencia y panorama global">
         </div>
       </div>
     </div>
@@ -647,7 +646,7 @@
       <span class="cert__label">//CERTIFICACIÓN INTERNACIONAL</span>
       <div class="cert__row">
         <button type="button" class="cert__media" data-open-cert aria-label="Ver certificado en tamaño completo">
-          <img src="assets/img/diploma-certificado.webp" alt="Diploma Internacional del Consultor Político" class="cert__img">
+          <img loading="lazy" decoding="async" src="assets/img/diploma-certificado.webp" alt="Diploma Internacional del Consultor Político" class="cert__img">
           <span class="cert__media-hint">Ver certificado</span>
         </button>
         <div class="cert__panel">
@@ -751,7 +750,7 @@
     <div class="wrap footer__inner">
       <div class="footer__brand">
         <a href="#hero" class="footer__logo-wrap">
-          <img src="assets/escudo.svg" alt="GOBERNA" class="footer__logo">
+          <img loading="lazy" decoding="async" src="assets/escudo.svg" alt="GOBERNA" class="footer__logo">
           <span class="footer__name">GOBERNA</span>
         </a>
         <p class="footer__tag">Grupo Goberna · Diploma Internacional del Consultor Político</p>
@@ -847,18 +846,18 @@
     <div class="modal__backdrop" data-close></div>
     <div class="modal__card modal__card--image" role="dialog" aria-modal="true" aria-label="Certificado en tamaño completo">
       <button class="modal__close" type="button" data-close aria-label="Cerrar">&times;</button>
-      <img src="assets/img/diploma-certificado.webp" alt="Certificado en tamaño completo" class="cert-modal__img">
+      <img loading="lazy" decoding="async" src="assets/img/diploma-certificado.webp" alt="Certificado en tamaño completo" class="cert-modal__img">
     </div>
   </div>
 
   <!-- JS modular: core (config, countdown, nav, modal, form) + handlers por sección -->
-  <script src="js/core.js?v=v3-12"></script>
-  <script src="sections/obtendras/obtendras.js?v=v3-12"></script>
-  <script src="sections/evo/evo.js?v=v3-12"></script>
-  <script src="sections/porque/porque.js?v=v3-12"></script>
-  <script src="sections/docentes/docentes.js?v=v3-12"></script>
-  <script src="sections/prog/prog.js?v=v3-12"></script>
-  <script src="sections/reels/reels.js?v=v3-12"></script>
-  <script src="sections/faqsec/faqsec.js?v=v3-12"></script>
+  <script defer src="js/core.js?v=v3-14"></script>
+  <script defer src="sections/obtendras/obtendras.js?v=v3-14"></script>
+  <script defer src="sections/evo/evo.js?v=v3-14"></script>
+  <script defer src="sections/porque/porque.js?v=v3-14"></script>
+  <script defer src="sections/docentes/docentes.js?v=v3-14"></script>
+  <script defer src="sections/prog/prog.js?v=v3-14"></script>
+  <script defer src="sections/reels/reels.js?v=v3-14"></script>
+  <script defer src="sections/faqsec/faqsec.js?v=v3-14"></script>
 </body>
 </html>

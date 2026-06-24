@@ -24,6 +24,7 @@
   border-radius: 50%;
   background: rgba(255, 200, 0, 0.06);
   object-fit: cover;
+  object-position: center 20%; /* retrato: centra el rostro en el círculo */
 }
 .sabias__divider { width: 2px; align-self: stretch; margin: 24px 0; background: var(--gold); flex-shrink: 0; }
 .sabias__content { flex: 1; }

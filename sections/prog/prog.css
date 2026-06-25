@@ -3,7 +3,7 @@
 .prog { background: #05080e url("../../assets/img/fondos consultoria/Frame 401.webp") center / cover no-repeat; padding: var(--sp) 0; }
 .prog__title { font-weight: 800; font-size: 44px; text-align: center; margin-bottom: 48px; }
 .prog__acc { border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; overflow: hidden; }
-.prog-item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.prog-item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: background-color 0.42s ease; }
 .prog-item:last-child { border-bottom: none; }
 .prog-item__head {
   width: 100%;
@@ -19,19 +19,20 @@
 }
 .prog-item__id { display: flex; flex-direction: column; gap: 4px; }
 .prog-item__etapa { font-family: var(--font-sora); font-weight: 700; font-size: 15px; color: var(--gold); }
-.prog-item__name { font-family: var(--font-sora); font-weight: 600; font-size: 16px; color: var(--white); line-height: 1.3; }
-.prog-item__sub { font-family: var(--font-mont); font-weight: 500; font-size: 14px; color: rgba(255, 255, 255, 0.6); line-height: 1.35; }
+.prog-item__name { font-family: var(--font-sora); font-weight: 600; font-size: 16px; color: var(--white); line-height: 1.3; transition: color 0.42s ease; }
+.prog-item__sub { font-family: var(--font-mont); font-weight: 500; font-size: 14px; color: rgba(255, 255, 255, 0.6); line-height: 1.35; transition: color 0.42s ease; }
 .prog-item__short { font-family: var(--font-mont); font-weight: 600; font-size: 15px; color: var(--white); line-height: 1.4; }
-.prog-item__icon { font-size: 26px; color: var(--gold); text-align: center; line-height: 1; }
-.prog-item__full { display: none; padding: 0 28px 26px; }
-.prog-item__full p { font-family: var(--font-mont); font-size: 15px; line-height: 1.65; }
+.prog-item__icon { font-size: 26px; color: var(--gold); text-align: center; line-height: 1; transition: color 0.42s ease; }
+/* Acordeón animado: la altura se transiciona con grid-template-rows (0fr -> 1fr). */
+.prog-item__full { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.42s cubic-bezier(0.4, 0, 0.2, 1); }
+.prog-item__full p { overflow: hidden; min-height: 0; margin: 0; padding: 0 28px 26px; font-family: var(--font-mont); font-size: 15px; line-height: 1.65; }
 .prog-item--open { background: #eef3f2; }
 .prog-item--open .prog-item__head { grid-template-columns: 1fr 40px; }
 .prog-item--open .prog-item__name { color: #10231f; }
 .prog-item--open .prog-item__sub { color: rgba(16, 35, 31, 0.7); }
 .prog-item--open .prog-item__icon { color: #10231f; }
 .prog-item--open .prog-item__short { display: none; }
-.prog-item--open .prog-item__full { display: block; }
+.prog-item--open .prog-item__full { grid-template-rows: 1fr; }
 .prog-item--open .prog-item__full p { color: #202d3a; }
 @media (max-width: 900px) {
   .prog-item__head { grid-template-columns: 1fr 40px; }
@@ -39,4 +40,11 @@
 }
 @media (max-width: 600px) {
   .prog__title { font-size: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prog-item,
+  .prog-item__full,
+  .prog-item__name,
+  .prog-item__sub,
+  .prog-item__icon { transition: none; }
 }

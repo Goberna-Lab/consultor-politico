@@ -1,5 +1,5 @@
 /* obtendras — contenedor de sección "El perfil del estratega político".
    El layout interactivo vive en sections/perfil/perfil.css (clases .perfil*). */
 
-.obtendras { background: #05080e url("../../assets/img/programas-bg.webp") center / cover no-repeat; padding: var(--sp) 0; }
+.obtendras { background: #05080e url("../../assets/img/fondos consultoria/Frame 403.webp") center / cover no-repeat; padding: var(--sp) 0; }
 .obtendras__dots { display: none; }

@@ -1,60 +1,39 @@
-/* docentes — generado por refactor modular (verbatim de styles.css) */
+/* docentes — sección dividida: texto (izquierda) + foto del docente (derecha) */
 
 .docentes { background: #05080e url("../../assets/img/docentes-bg.webp") center / cover no-repeat; padding: var(--sp) 0; }
 .docentes__title { font-weight: 800; font-size: 40px; text-align: center; line-height: 1.15; margin-bottom: 48px; }
 .docentes__title .text-gold { font-weight: 700; }
-.docentes__carousel { display: flex; align-items: center; gap: 16px; }
-.docentes__track { flex: 1; display: flex; gap: 20px; overflow: hidden; scroll-behavior: smooth; }
-.doc-card {
-  position: relative;
-  flex: 0 0 calc((100% - 40px) / 3);
-  min-width: 0;
-  background: #05080e;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  aspect-ratio: 3 / 4;
+
+.docentes__split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+
+.docentes__info { max-width: 520px; }
+.docentes__flag { display: inline-block; font-family: var(--font-mont); font-weight: 700; font-size: 13px; color: var(--gold); letter-spacing: 1.5px; }
+.docentes__name { font-family: var(--font-sora); font-weight: 700; font-size: 30px; color: #fff; margin-top: 12px; line-height: 1.2; }
+.docentes__role { font-family: var(--font-mont); font-weight: 600; font-size: 15px; color: rgba(255, 255, 255, 0.78); margin-top: 10px; }
+.docentes__bio { font-family: var(--font-mont); font-size: 15px; line-height: 1.7; color: rgba(255, 255, 255, 0.82); margin-top: 22px; }
+
+.docentes__media { display: flex; justify-content: center; }
+.docentes__stage { position: relative; width: 100%; max-width: 460px; aspect-ratio: 1218 / 1292; }
+.docentes__bg,
+.docentes__figure { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+.docentes__bg { z-index: 1; }
+/* Recorta solo la base de la figura en la línea del marco: su saco se apoya sobre el borde dorado y no lo tapa ni se sale. */
+.docentes__clip { position: absolute; inset: 0; z-index: 2; clip-path: inset(-50% -50% 1.5% -50%); }
+/* Aura dorada que sigue la silueta (drop-shadow usa el canal alpha): baja en reposo, alta al pasar el cursor. */
+.docentes__figure {
+  z-index: 2;
+  object-position: bottom center;
+  filter: drop-shadow(0 0 4px rgba(255, 200, 0, 0.22)) drop-shadow(0 0 10px rgba(255, 200, 0, 0.1));
+  transition: filter 0.5s ease;
 }
-.doc-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-.doc-card__panel {
-  position: absolute; inset: 0; z-index: 2;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 20px 16px;
-  background: linear-gradient(to top, rgba(5, 8, 14, 0.94) 18%, rgba(5, 8, 14, 0) 54%);
+.docentes__stage:hover .docentes__figure {
+  filter: drop-shadow(0 0 14px rgba(255, 200, 0, 0.8)) drop-shadow(0 0 36px rgba(255, 200, 0, 0.5));
 }
-.doc-card__panel::before {
-  content: ''; position: absolute; inset: 0; z-index: -1;
-  background: rgba(5, 8, 14, 0.86);
-  opacity: 0; transition: opacity .42s ease;
-}
-.doc-card--open .doc-card__panel::before { opacity: 1; }
-.doc-card__flag { display: inline-block; font-family: var(--font-mont); font-weight: 700; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
-.doc-card__name { font-family: var(--font-sora); font-weight: 700; font-size: 14px; color: #fff; margin-top: 4px; }
-.doc-card__role { font-family: var(--font-mont); font-size: 11px; color: rgba(255, 255, 255, 0.72); margin-top: 4px; }
-.doc-card__bio-wrap {
-  display: grid; grid-template-rows: 0fr;
-  transition: grid-template-rows .42s cubic-bezier(.22, .61, .36, 1);
-}
-.doc-card--open .doc-card__bio-wrap { grid-template-rows: 1fr; }
-.doc-card__bio {
-  overflow: hidden; min-height: 0; margin: 0; padding-top: 14px;
-  font-family: var(--font-mont); font-size: 12.5px; color: rgba(255, 255, 255, 0.9); line-height: 1.6;
-}
-.docentes__dots { display: flex; justify-content: center; gap: 8px; margin-top: 40px; }
-.docentes__dot {
-  width: 34px; height: 5px; border: 0; padding: 0; border-radius: 3px;
-  background: rgba(255, 255, 255, 0.22);
-  cursor: pointer;
-  transition: background .3s ease;
-}
-.docentes__dot--on { background: var(--gold); }
-@media (max-width: 1024px) {
-  .docentes__track .doc-card { flex-basis: calc((100% - 20px) / 2); }
-}
+
 @media (max-width: 900px) {
-  .docentes__track .doc-card { flex-basis: calc((100% - 20px) / 2); }
-}
-@media (max-width: 600px) {
-  .docentes__track .doc-card { flex-basis: 100%; }
+  .docentes__split { grid-template-columns: 1fr; gap: 32px; }
+  .docentes__media { order: -1; }
+  .docentes__info { max-width: none; }
   .docentes__title { font-size: 30px; }
+  .docentes__name { font-size: 26px; }
 }

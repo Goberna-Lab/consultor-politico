@@ -65,24 +65,24 @@
 .desarrollaras__stat-txt { display: flex; flex-direction: column; line-height: 1.2; font-family: var(--font-mont); font-size: 13px; color: var(--white-75); }
 .desarrollaras__stat-txt strong { font-family: var(--font-sora); font-weight: 800; font-size: clamp(15px, 1.5vw, 18px); color: var(--gold); }
 
-/* ============ War Room — panel cinematográfico ============ */
+/* ============ War Room — render isométrico flotante (PNG transparente) ============ */
 .desarrollaras__stage {
   position: relative; margin: 0; flex: 1 1 auto;
-  min-height: clamp(300px, 30vw, 420px);
-  border-radius: 20px; overflow: hidden;
-  background: radial-gradient(135% 130% at 50% 18%, #14213a 0%, #0c1830 60%, #07101f 100%);
-  border: 1px solid rgba(255, 200, 0, 0.20);
-  box-shadow: 0 34px 80px -24px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 70px -12px rgba(255, 200, 0, 0.10);
-  transition: transform .45s cubic-bezier(.2, .7, .2, 1), box-shadow .45s ease;
+  min-height: clamp(260px, 27vw, 380px);
 }
-.desarrollaras__stage::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; z-index: 1;
-  box-shadow: inset 0 1px 0 rgba(255, 200, 0, 0.22);
-  background: radial-gradient(120% 80% at 50% 0%, rgba(255, 200, 0, 0.10) 0%, transparent 55%);
+/* Halo dorado tenue bajo la sala */
+.desarrollaras__stage::before {
+  content: ""; position: absolute; left: 6%; right: 14%; bottom: 8%; height: 46%; z-index: 0; pointer-events: none;
+  background: radial-gradient(60% 100% at 45% 100%, rgba(255, 200, 0, 0.10) 0%, transparent 70%);
+  filter: blur(6px);
 }
-.desarrollaras__stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 44%; display: block; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
-.desarrollaras__stage:hover { transform: translateY(-5px); box-shadow: 0 46px 100px -24px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 200, 0, 0.28), 0 0 90px -10px rgba(255, 200, 0, 0.16); }
-.desarrollaras__stage:hover .desarrollaras__stage-img { transform: scale(1.045); }
+.desarrollaras__stage-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;
+  object-fit: contain; object-position: left bottom; display: block;
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.5));
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.desarrollaras__stage:hover .desarrollaras__stage-img { transform: translateY(-4px); }
 
 /* Badge "En vivo" — pill con borde dorado, ícono broadcast + dos líneas */
 .desarrollaras__badge {

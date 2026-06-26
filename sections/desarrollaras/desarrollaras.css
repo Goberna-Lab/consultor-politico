@@ -5,8 +5,9 @@
   isolation: isolate;
   /* Fondo navy profundo: glow azul superior + glint dorado a la derecha. */
   background:
-    radial-gradient(60% 50% at 86% 24%, rgba(255, 200, 0, 0.06) 0%, transparent 55%),
-    radial-gradient(120% 88% at 50% -6%, #0f3060 0%, #0b2247 30%, #081a37 56%, #060f22 78%, #050b18 100%);
+    linear-gradient(90deg, rgba(5, 8, 13, 0.62) 0%, rgba(5, 8, 13, 0.18) 40%, rgba(5, 8, 13, 0) 62%),
+    url("../../assets/img/warroom-bg.webp") center / cover no-repeat,
+    #06080e;
   color: var(--white);
   min-height: 100vh;
   min-height: 100svh;
@@ -15,14 +16,6 @@
   padding: calc(var(--header-h) + clamp(28px, 5vw, 60px)) 0 clamp(56px, 7vw, 96px);
   border-top: 1px solid rgba(255, 200, 0, 0.16);
   overflow: hidden;
-}
-/* Textura de puntos sutil que se desvanece hacia abajo */
-.desarrollaras::before {
-  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background-image: radial-gradient(rgba(150, 180, 230, 0.10) 1px, transparent 1.4px);
-  background-size: 24px 24px;
-  -webkit-mask-image: radial-gradient(130% 95% at 50% 0%, #000 0%, transparent 72%);
-  mask-image: radial-gradient(130% 95% at 50% 0%, #000 0%, transparent 72%);
 }
 .desarrollaras__inner { position: relative; z-index: 1; width: 100%; }
 

@@ -49,7 +49,7 @@
   <link rel="stylesheet" href="sections/docentes/docentes.css?v=v3-30">
   <link rel="stylesheet" href="sections/prog/prog.css?v=v3-22">
   <link rel="stylesheet" href="sections/metodo/metodo.css?v=v3-17">
-  <link rel="stylesheet" href="sections/desarrollaras/desarrollaras.css?v=v3-19">
+  <link rel="stylesheet" href="sections/desarrollaras/desarrollaras.css?v=v3-20">
   <link rel="stylesheet" href="sections/reels/reels.css?v=v3-19">
   <link rel="stylesheet" href="sections/cert/cert.css?v=v3-17">
   <link rel="stylesheet" href="sections/inv/inv.css?v=v3-18">
@@ -585,32 +585,56 @@
   <!-- ============ DESARROLLARÁS (experiencia inmersiva) — pantalla completa ============ -->
   <section class="desarrollaras">
     <div class="wrap desarrollaras__inner">
-
-      <!-- Encabezado de sección -->
-      <header class="desarrollaras__head">
-        <p class="desarrollaras__label">// LA EXPERIENCIA</p>
-        <p class="desarrollaras__lead">El resultado es una <strong>experiencia inmersiva</strong> donde cada participante <strong>aprende a actuar como un consultor político profesional</strong> y no solo a estudiar teoría política.</p>
-      </header>
-
-      <!-- Cuerpo: War Room (izq) + entregables (der) -->
       <div class="desarrollaras__grid">
 
-        <!-- War Room — panel cinematográfico (centro de operaciones) -->
-        <figure class="desarrollaras__stage">
-          <img class="desarrollaras__stage-img" src="assets/img/warroom-sala.webp" alt="War Room — centro de operaciones de campaña de GOBERNA" loading="lazy">
-          <span class="desarrollaras__hud" aria-hidden="true"></span>
-          <span class="desarrollaras__badge"><i class="desarrollaras__pulse"></i>En vivo · War Room</span>
-          <figcaption class="desarrollaras__caption">
-            <span class="desarrollaras__caption-title">Centro de operaciones de campaña</span>
-            <span class="desarrollaras__caption-sub">Monitoreo, decisión y respuesta en tiempo real</span>
-          </figcaption>
-        </figure>
+        <!-- Columna izquierda: título + stats + War Room -->
+        <div class="desarrollaras__main">
+          <header class="desarrollaras__head">
+            <p class="desarrollaras__label"><span>//</span> LA EXPERIENCIA</p>
+            <h2 class="desarrollaras__title-main">El resultado es una experiencia <span>inmersiva</span></h2>
+            <p class="desarrollaras__sub">Donde cada participante <strong>aprende a actuar como un consultor político profesional</strong> y no solo a estudiar teoría política.</p>
+          </header>
 
-        <!-- Entregables -->
+          <!-- Stats -->
+          <ul class="desarrollaras__stats">
+            <li class="desarrollaras__stat">
+              <span class="desarrollaras__stat-ic" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 5.4a3 3 0 0 1 0 5.6M16.5 19a5.5 5.5 0 0 0-2.2-4.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <span class="desarrollaras__stat-txt"><strong>100%</strong>Práctico</span>
+            </li>
+            <li class="desarrollaras__stat">
+              <span class="desarrollaras__stat-ic" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="13" r="7.5" stroke="currentColor" stroke-width="1.6"/><circle cx="11" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/><path d="M11 13l6.5-6.5M15 5l.5-2.5L18 2l-.5 2.5L20 5l-2.5.5L17 8l-.5-2.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="desarrollaras__stat-txt"><strong>Decisiones</strong>En tiempo real</span>
+            </li>
+            <li class="desarrollaras__stat">
+              <span class="desarrollaras__stat-ic" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 20h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="6" y="13" width="2.6" height="5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="10.7" y="9.5" width="2.6" height="8.5" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="15.4" y="6" width="2.6" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 9.5l4-3 3 2 5-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="desarrollaras__stat-txt"><strong>Estrategia</strong>Aplicada</span>
+            </li>
+          </ul>
+
+          <!-- War Room — panel cinematográfico -->
+          <figure class="desarrollaras__stage">
+            <img class="desarrollaras__stage-img" src="assets/img/warroom-sala.webp" alt="War Room — centro de operaciones de campaña de GOBERNA" loading="lazy">
+            <span class="desarrollaras__badge">
+              <span class="desarrollaras__badge-ic" aria-hidden="true">
+                <i class="desarrollaras__pulse"></i>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.3 6.3a8 8 0 000 11.4M17.7 6.3a8 8 0 010 11.4M9.2 9.2a4 4 0 000 5.6M14.8 9.2a4 4 0 010 5.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg>
+              </span>
+              <span class="desarrollaras__badge-txt"><strong>En vivo · War Room</strong><small>Participa, decide y lidera</small></span>
+            </span>
+          </figure>
+        </div>
+
+        <!-- Columna derecha: entregables -->
         <div class="desarrollaras__card">
           <div class="desarrollaras__card-head">
             <h3 class="desarrollaras__title">Desarrollarás</h3>
-            <span class="desarrollaras__count">9 entregables</span>
+            <span class="desarrollaras__count">9 Entregables</span>
           </div>
           <ul class="desarrollaras__list">
             <li class="desarrollaras__item"><span class="desarrollaras__check"></span>Diagnóstico político</li>
@@ -629,7 +653,6 @@
       </div>
     </div>
   </section>
-
   <!-- ============ MIRA EL ENFOQUE EN ACCIÓN ============ -->
   <section class="reels">
     <div class="wrap reels__inner">

@@ -24,9 +24,7 @@
 
 .docentes__media { display: flex; justify-content: center; }
 .docentes__stage { position: relative; width: 100%; max-width: 460px; aspect-ratio: 1218 / 1292; }
-.docentes__bg,
 .docentes__figure { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
-.docentes__bg { z-index: 1; }
 /* Recorta solo la base de la figura en la línea del marco: su saco se apoya sobre el borde dorado y no lo tapa ni se sale. */
 .docentes__clip { position: absolute; inset: 0; z-index: 2; clip-path: inset(-50% -50% 1.5% -50%); }
 /* Aura dorada que sigue la silueta (drop-shadow usa el canal alpha): baja en reposo, alta al pasar el cursor. */

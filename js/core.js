@@ -252,6 +252,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Reveal escalonado al scroll (genérico): elementos con [data-reveal] aparecen
+  // al entrar al viewport. Si no hay JS / IntersectionObserver / o el usuario pide
+  // menos movimiento, NO se agrega .reveal-on y los elementos quedan visibles.
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  var allowMotion = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (revealEls.length && 'IntersectionObserver' in window && allowMotion) {
+    document.documentElement.classList.add('reveal-on');
+    var revealIO = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-revealed'); obs.unobserve(en.target); }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach(function (el) { revealIO.observe(el); });
+  }
+
   // Form submit handler — envía el lead a Bravo (/v1/public/contact).
   var form = document.getElementById('contact-form');
   if (form) {

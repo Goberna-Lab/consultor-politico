@@ -1,5 +1,15 @@
 /* obtendras — contenedor de sección "El perfil del estratega político".
    El layout interactivo vive en sections/perfil/perfil.css (clases .perfil*). */
 
-.obtendras { background: #05080e url("../../assets/img/fondos consultoria/Frame 403.webp") center / cover no-repeat; padding: var(--sp) 0; }
+/* Fondo negro (diseño Figma): la textura se desatura (blend "color" con gris)
+   y se oscurece con un scrim, eliminando el tinte azul de Frame 403. */
+.obtendras {
+  background:
+    linear-gradient(rgba(5, 8, 14, 0.74), rgba(5, 8, 14, 0.74)),
+    linear-gradient(#000, #000),
+    url("../../assets/img/fondos consultoria/Frame 403.webp") center / cover no-repeat,
+    #05080e;
+  background-blend-mode: normal, color, normal, normal;
+  padding: var(--sp) 0;
+}
 .obtendras__dots { display: none; }

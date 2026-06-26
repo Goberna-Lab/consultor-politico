@@ -1,6 +1,16 @@
 /* docentes — sección dividida: texto (izquierda) + foto del docente (derecha) */
 
-.docentes { background: #05080e url("../../assets/img/docentes-bg.webp") center / cover no-repeat; padding: var(--sp) 0; }
+/* Fondo negro (diseño Figma): textura desaturada (blend "color") + scrim suave
+   —docentes-bg ya es oscuro— para neutralizar su tinte frío sin aplanarla. */
+.docentes {
+  background:
+    linear-gradient(rgba(5, 8, 14, 0.55), rgba(5, 8, 14, 0.55)),
+    linear-gradient(#000, #000),
+    url("../../assets/img/docentes-bg.webp") center / cover no-repeat,
+    #05080e;
+  background-blend-mode: normal, color, normal, normal;
+  padding: var(--sp) 0;
+}
 .docentes__title { font-weight: 800; font-size: 40px; text-align: center; line-height: 1.15; margin-bottom: 48px; }
 .docentes__title .text-gold { font-weight: 700; }
 

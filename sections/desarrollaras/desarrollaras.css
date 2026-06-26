@@ -4,8 +4,8 @@
   /* Sección OSCURA (centro de mando) — corta en seco con la banda clara de "metodo"
      y baja hasta --bg para enlazar de forma continua con "lograras". */
   background:
-    radial-gradient(120% 85% at 50% 0%, rgba(11, 43, 84, 0.55) 0%, transparent 60%),
-    linear-gradient(180deg, #0a1322 0%, #070d18 56%, var(--bg) 100%);
+    radial-gradient(120% 85% at 50% 0%, rgba(255, 200, 0, 0.07) 0%, transparent 55%),
+    linear-gradient(180deg, #0a0c11 0%, #06080d 56%, var(--bg) 100%);
   color: var(--white);
   min-height: 100vh;
   min-height: 100svh;
@@ -32,9 +32,9 @@
   min-height: clamp(420px, 42vw, 560px);
   border-radius: 22px;
   overflow: hidden;
-  background: radial-gradient(135% 130% at 50% 18%, #1a2e4c 0%, #0d1a2e 60%, #070d18 100%);
+  background: radial-gradient(135% 130% at 50% 18%, #14161c 0%, #0c0e13 60%, #07080c 100%);
   border: 1px solid rgba(255, 200, 0, 0.18);
-  box-shadow: 0 34px 80px -24px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 70px -12px rgba(11, 43, 84, 0.55);
+  box-shadow: 0 34px 80px -24px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(255, 255, 255, 0.04), 0 0 70px -12px rgba(255, 200, 0, 0.10);
   transition: transform .45s cubic-bezier(.2, .7, .2, 1), box-shadow .45s ease;
 }
 /* Glow dorado superior + hairline */
@@ -44,7 +44,7 @@
   background: radial-gradient(120% 80% at 50% 0%, rgba(255, 200, 0, 0.10) 0%, transparent 55%);
 }
 .desarrollaras__stage-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 44%; display: block; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
-.desarrollaras__stage:hover { transform: translateY(-5px); box-shadow: 0 46px 100px -24px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 200, 0, 0.28), 0 0 90px -10px rgba(11, 43, 84, 0.6); }
+.desarrollaras__stage:hover { transform: translateY(-5px); box-shadow: 0 46px 100px -24px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 200, 0, 0.28), 0 0 90px -10px rgba(255, 200, 0, 0.16); }
 .desarrollaras__stage:hover .desarrollaras__stage-img { transform: scale(1.045); }
 
 /* HUD: 4 esquinas tipo centro de mando (CSS puro, sin DOM extra) */

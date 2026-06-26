@@ -1,6 +1,16 @@
 /* porque — generado por refactor modular (verbatim de styles.css) */
 
-.porque { background: #05080e url("../../assets/img/fondos consultoria/Frame 401.webp") center / cover no-repeat; padding: var(--sp) 0; }
+/* Fondo negro (diseño Figma): la Casa Blanca se desatura (blend "color") y se
+   oscurece para quitar el cast navy, quedando como textura neutra tenue. */
+.porque {
+  background:
+    linear-gradient(rgba(5, 8, 14, 0.6), rgba(5, 8, 14, 0.6)),
+    linear-gradient(#000, #000),
+    url("../../assets/img/fondos consultoria/Frame 401.webp") center / cover no-repeat,
+    #05080e;
+  background-blend-mode: normal, color, normal, normal;
+  padding: var(--sp) 0;
+}
 .porque__title { font-weight: 800; font-size: 44px; text-align: center; line-height: 1.1; margin-bottom: 48px; }
 .porque__title .text-gold { font-weight: 700; }
 .porque__tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin-bottom: 46px; }

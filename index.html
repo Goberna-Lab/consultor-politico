@@ -41,18 +41,18 @@
   <link rel="stylesheet" href="sections/hero/hero.css?v=v3-17">
   <link rel="stylesheet" href="sections/sabias/sabias.css?v=v3-17">
   <link rel="stylesheet" href="sections/desafio/desafio.css?v=v3-17">
-  <link rel="stylesheet" href="sections/obtendras/obtendras.css?v=v3-18">
+  <link rel="stylesheet" href="sections/obtendras/obtendras.css?v=v3-19">
   <link rel="stylesheet" href="sections/perfil/perfil.css?v=v3-17">
-  <link rel="stylesheet" href="sections/evo/evo.css?v=v3-17">
-  <link rel="stylesheet" href="sections/porque/porque.css?v=v3-18">
-  <link rel="stylesheet" href="sections/dirigido/dirigido.css?v=v3-17">
-  <link rel="stylesheet" href="sections/docentes/docentes.css?v=v3-27">
-  <link rel="stylesheet" href="sections/prog/prog.css?v=v3-21">
+  <link rel="stylesheet" href="sections/evo/evo.css?v=v3-18">
+  <link rel="stylesheet" href="sections/porque/porque.css?v=v3-19">
+  <link rel="stylesheet" href="sections/dirigido/dirigido.css?v=v3-18">
+  <link rel="stylesheet" href="sections/docentes/docentes.css?v=v3-28">
+  <link rel="stylesheet" href="sections/prog/prog.css?v=v3-22">
   <link rel="stylesheet" href="sections/metodo/metodo.css?v=v3-17">
-  <link rel="stylesheet" href="sections/desarrollaras/desarrollaras.css?v=v3-17">
-  <link rel="stylesheet" href="sections/reels/reels.css?v=v3-17">
+  <link rel="stylesheet" href="sections/desarrollaras/desarrollaras.css?v=v3-19">
+  <link rel="stylesheet" href="sections/reels/reels.css?v=v3-19">
   <link rel="stylesheet" href="sections/cert/cert.css?v=v3-17">
-  <link rel="stylesheet" href="sections/inv/inv.css?v=v3-17">
+  <link rel="stylesheet" href="sections/inv/inv.css?v=v3-18">
   <link rel="stylesheet" href="sections/lograras/lograras.css?v=v3-17">
   <link rel="stylesheet" href="sections/faqsec/faqsec.css?v=v3-17">
   <link rel="stylesheet" href="base/footer.css?v=v3-17">
@@ -403,26 +403,84 @@
     </div>
   </section>
 
-  <!-- ============ ¿PARA QUIÉN ES ESTE DIPLOMA? ============ -->
+  <!-- ============ ¿PARA QUIÉN ES ESTE DIPLOMA? — Roster de comando ============ -->
   <section class="dirigido">
     <div class="wrap">
       <p class="dirigido__label">// PERFIL DE INGRESO</p>
       <h2 class="dirigido__title">¿Para quién es <span class="text-gold">este diploma?</span></h2>
       <p class="dirigido__lead">Diseñado para profesionales que buscan intervenir con solvencia técnica en campañas electorales, comunicación política, asesoramiento estratégico y gestión del poder.</p>
+
       <div class="dirigido__grid">
-        <div class="dirigido__item"><span class="dirigido__ic"></span>Asesores y equipos de campaña</div>
-        <div class="dirigido__item"><span class="dirigido__ic"></span>Candidatos, militantes y dirigentes</div>
-        <div class="dirigido__item"><span class="dirigido__ic"></span>Publicistas y politólogos</div>
-        <div class="dirigido__item"><span class="dirigido__ic"></span>Consultores de marketing político</div>
-        <div class="dirigido__item"><span class="dirigido__ic"></span>Ejecutivos de relaciones institucionales</div>
-        <div class="dirigido__item"><span class="dirigido__ic"></span>Periodistas e investigadores</div>
-        <div class="dirigido__item"><span class="dirigido__ic"></span>Comunicadores y líderes de opinión</div>
-        <div class="dirigido__item"><span class="dirigido__ic"></span>Estudiantes avanzados de política</div>
+
+        <article class="dirigido__card" data-reveal style="--i:0">
+          <span class="dirigido__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.1" stroke="currentColor" stroke-width="1.6"/><path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <div class="dirigido__txt">
+            <h3 class="dirigido__name">Asesores y equipos de campaña</h3>
+            <p class="dirigido__role">Estrategia táctica</p>
+          </div>
+        </article>
+
+        <article class="dirigido__card" data-reveal style="--i:1">
+          <span class="dirigido__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 21V3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 4.2h12.4l-2.4 3.9 2.4 3.9H6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+          <div class="dirigido__txt">
+            <h3 class="dirigido__name">Candidatos, militantes y dirigentes</h3>
+            <p class="dirigido__role">Liderazgo electoral</p>
+          </div>
+        </article>
+
+        <article class="dirigido__card" data-reveal style="--i:2">
+          <span class="dirigido__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.5 17v-4.5M12 17V8M16.5 17v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <div class="dirigido__txt">
+            <h3 class="dirigido__name">Publicistas y politólogos</h3>
+            <p class="dirigido__role">Mensaje y datos</p>
+          </div>
+        </article>
+
+        <article class="dirigido__card" data-reveal style="--i:3">
+          <span class="dirigido__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 10.5v3l11 4.5V6L3 10.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 8.5a3.4 3.4 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 14v3.4a1.4 1.4 0 0 0 2.8 0V15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="dirigido__txt">
+            <h3 class="dirigido__name">Consultores de marketing político</h3>
+            <p class="dirigido__role">Marca política</p>
+          </div>
+        </article>
+
+        <article class="dirigido__card" data-reveal style="--i:4">
+          <span class="dirigido__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9.5 12 4l9 5.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5.5 10.5v7M9.5 10.5v7M14.5 10.5v7M18.5 10.5v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3.5 20.5h17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <div class="dirigido__txt">
+            <h3 class="dirigido__name">Ejecutivos de relaciones institucionales</h3>
+            <p class="dirigido__role">Vínculos y poder</p>
+          </div>
+        </article>
+
+        <article class="dirigido__card" data-reveal style="--i:5">
+          <span class="dirigido__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M19.5 19.5 15.2 15.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <div class="dirigido__txt">
+            <h3 class="dirigido__name">Periodistas e investigadores</h3>
+            <p class="dirigido__role">Investigación</p>
+          </div>
+        </article>
+
+        <article class="dirigido__card" data-reveal style="--i:6">
+          <span class="dirigido__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 17.5V21M8.5 21h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <div class="dirigido__txt">
+            <h3 class="dirigido__name">Comunicadores y líderes de opinión</h3>
+            <p class="dirigido__role">Vocería pública</p>
+          </div>
+        </article>
+
+        <article class="dirigido__card" data-reveal style="--i:7">
+          <span class="dirigido__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M2.5 8.5 12 5l9.5 3.5L12 12 2.5 8.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M6.5 10.2V15c0 1.45 2.46 2.6 5.5 2.6s5.5-1.15 5.5-2.6v-4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M21.5 8.7v4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <div class="dirigido__txt">
+            <h3 class="dirigido__name">Estudiantes avanzados de política</h3>
+            <p class="dirigido__role">Formación avanzada</p>
+          </div>
+        </article>
+
       </div>
+
       <p class="dirigido__note">Al finalizar, estarás en capacidad de <strong>diseñar, dirigir y defender</strong> una campaña electoral integral bajo el modelo estratégico de la <strong>Máquina Electoral GOBERNA</strong>.</p>
     </div>
   </section>
-
   <!-- ============ DOCENTES ============ -->
   <section class="docentes" id="docentes">
     <div class="wrap">
@@ -802,7 +860,7 @@
   </div>
 
   <!-- JS modular: core (config, countdown, nav, modal, form) + handlers por sección -->
-  <script defer src="js/core.js?v=v3-17"></script>
+  <script defer src="js/core.js?v=v3-18"></script>
   <script defer src="sections/obtendras/obtendras.js?v=v3-17"></script>
   <script defer src="sections/evo/evo.js?v=v3-17"></script>
   <script defer src="sections/porque/porque.js?v=v3-17"></script>

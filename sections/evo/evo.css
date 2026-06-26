@@ -1,6 +1,16 @@
 /* evo — generado por refactor modular (verbatim de styles.css) */
 
-.evo { background: #070b13 url("../../assets/img/paraquien-bg.webp") center / cover no-repeat; padding: var(--sp) 0; }
+/* Fondo negro (diseño Figma): textura desaturada (blend "color") + scrim oscuro
+   para eliminar el tinte azul de paraquien-bg. Mismo tratamiento que obtendras. */
+.evo {
+  background:
+    linear-gradient(rgba(5, 8, 14, 0.74), rgba(5, 8, 14, 0.74)),
+    linear-gradient(#000, #000),
+    url("../../assets/img/paraquien-bg.webp") center / cover no-repeat,
+    #05080e;
+  background-blend-mode: normal, color, normal, normal;
+  padding: var(--sp) 0;
+}
 .evo__label { font-weight: 600; font-size: 14px; color: var(--gold); text-align: center; margin-bottom: 20px; }
 .evo__title { font-weight: 500; font-size: 40px; text-align: center; }
 .evo__title .text-gold { font-weight: 700; }

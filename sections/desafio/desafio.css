@@ -4,9 +4,9 @@
 .desafio__inner { display: flex; align-items: center; gap: 80px; padding: var(--sp) 0; }
 .desafio__left { flex: 1 1 46%; max-width: 460px; }
 .desafio__label { font-weight: 700; font-size: 13px; letter-spacing: 1px; color: #9a7600; margin-bottom: 28px; }
-.desafio__title { color: #10231f; line-height: 1.04; margin-bottom: 26px; }
-.desafio__title span { font-weight: 600; font-size: clamp(28px, 2.6vw, 36px); }
-.desafio__title strong { font-weight: 800; font-size: clamp(32px, 3.2vw, 44px); }
+.desafio__title { color: #10231f; line-height: 1.03; margin-bottom: 26px; }
+.desafio__title span { display: block; font-weight: 800; font-size: clamp(36px, 4vw, 50px); letter-spacing: -0.5px; }
+.desafio__title strong { display: block; margin-top: 8px; font-weight: 600; font-size: clamp(19px, 2vw, 26px); letter-spacing: 0.2px; color: #9a7600; }
 .desafio__text { font-family: var(--font-mont); font-size: 16px; line-height: 1.75; color: #202d3a; }
 .desafio__text strong { font-weight: 700; }
 .desafio__image { flex: 1 1 50%; min-width: 0; max-width: 642px; aspect-ratio: 642 / 668; border-radius: 4px; object-fit: cover; }
@@ -19,6 +19,6 @@
   .desafio__image { width: 100%; max-width: none; aspect-ratio: 16 / 10; }
 }
 @media (max-width: 600px) {
-  .desafio__title span { font-size: 34px; }
-  .desafio__title strong { font-size: 40px; }
+  .desafio__title span { font-size: 32px; }
+  .desafio__title strong { font-size: 18px; }
 }

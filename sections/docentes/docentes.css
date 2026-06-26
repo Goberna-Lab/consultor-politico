@@ -24,18 +24,16 @@
 
 .docentes__media { display: flex; justify-content: center; }
 .docentes__stage { position: relative; width: 100%; max-width: 460px; aspect-ratio: 1218 / 1292; }
+.docentes__bg,
 .docentes__figure { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+.docentes__bg { z-index: 1; }
 /* Recorta solo la base de la figura en la línea del marco: su saco se apoya sobre el borde dorado y no lo tapa ni se sale. */
 .docentes__clip { position: absolute; inset: 0; z-index: 2; clip-path: inset(-50% -50% 1.5% -50%); }
-/* Aura dorada que sigue la silueta (drop-shadow usa el canal alpha): baja en reposo, alta al pasar el cursor. */
+/* Aura dorada estática que sigue la silueta (drop-shadow usa el canal alpha). Sin cambio en hover. */
 .docentes__figure {
   z-index: 2;
   object-position: bottom center;
   filter: drop-shadow(0 0 4px rgba(255, 200, 0, 0.22)) drop-shadow(0 0 10px rgba(255, 200, 0, 0.1));
-  transition: filter 0.5s ease;
-}
-.docentes__stage:hover .docentes__figure {
-  filter: drop-shadow(0 0 14px rgba(255, 200, 0, 0.8)) drop-shadow(0 0 36px rgba(255, 200, 0, 0.5));
 }
 
 @media (max-width: 900px) {

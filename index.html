@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="sections/metodo/metodo.css?v=v3-17">
   <link rel="stylesheet" href="sections/desarrollaras/desarrollaras.css?v=v3-22">
   <link rel="stylesheet" href="sections/reels/reels.css?v=v3-19">
-  <link rel="stylesheet" href="sections/cert/cert.css?v=v3-17">
+  <link rel="stylesheet" href="sections/cert/cert.css?v=v3-18">
   <link rel="stylesheet" href="sections/inv/inv.css?v=v3-18">
   <link rel="stylesheet" href="sections/lograras/lograras.css?v=v3-17">
   <link rel="stylesheet" href="sections/faqsec/faqsec.css?v=v3-17">
@@ -676,10 +676,29 @@
     <div class="wrap">
       <span class="cert__label">//CERTIFICACIÓN INTERNACIONAL</span>
       <div class="cert__row">
-        <button type="button" class="cert__media" data-open-cert aria-label="Ver certificado en tamaño completo">
-          <img loading="lazy" decoding="async" src="assets/img/certi1.webp" alt="Diploma Internacional del Consultor Político" class="cert__img">
-          <span class="cert__media-hint">Ver certificado</span>
-        </button>
+        <div class="cert__media cert-viewer" data-cert-viewer>
+          <div class="cert-viewer__stage">
+            <img src="assets/img/cert/folder-cerrado.webp" alt="Diploma — folder cerrado"
+                 class="cert-viewer__img cert-viewer__img--closed" width="1402" height="1122">
+            <img src="assets/img/cert/folder-abierto.webp" alt="Diploma — folder abierto"
+                 class="cert-viewer__img cert-viewer__img--open" width="1122" height="1402" loading="lazy">
+            <img src="assets/img/cert/diploma.webp" alt="Diploma Internacional del Consultor Político"
+                 class="cert-viewer__img cert-viewer__img--diploma" width="1080" height="1350" loading="lazy">
+          </div>
+          <button type="button" class="cert-viewer__surface" aria-label="Abrir el diploma"></button>
+          <span class="cert-viewer__hint" aria-hidden="true">
+            <span class="cert-viewer__hint-rest">Pasa el cursor para abrir</span>
+            <span class="cert-viewer__hint-open">Haz clic para ver el diploma</span>
+            <span class="cert-viewer__hint-revealed">Clic en ⤢ para ampliar</span>
+          </span>
+          <button type="button" class="cert-viewer__zoom" data-open-cert aria-label="Ver el diploma en tamaño completo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            Ampliar
+          </button>
+          <button type="button" class="cert-viewer__reset" aria-label="Volver al folder cerrado">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
         <div class="cert__panel">
           <h2 class="cert__title"><span>UNA CERTIFICACIÓN QUE RESPALDA TU</span><br><strong>PERFIL PROFESIONAL</strong></h2>
           <p class="cert__text">Diploma con verificación digital y respaldo institucional, diseñado para acreditar tus competencias en consultoría política, estrategia y dirección de campañas en entornos nacionales e internacionales.</p>
@@ -877,12 +896,12 @@
     <div class="modal__backdrop" data-close></div>
     <div class="modal__card modal__card--image" role="dialog" aria-modal="true" aria-label="Certificado en tamaño completo">
       <button class="modal__close" type="button" data-close aria-label="Cerrar">&times;</button>
-      <img loading="lazy" decoding="async" src="assets/img/certi1.webp" alt="Certificado en tamaño completo" class="cert-modal__img">
+      <img loading="lazy" decoding="async" src="assets/img/cert/diploma.webp" alt="Diploma Internacional del Consultor Político en tamaño completo" class="cert-modal__img">
     </div>
   </div>
 
   <!-- JS modular: core (config, countdown, nav, modal, form) + handlers por sección -->
-  <script defer src="js/core.js?v=v3-18"></script>
+  <script defer src="js/core.js?v=v3-19"></script>
   <script defer src="sections/obtendras/obtendras.js?v=v3-17"></script>
   <script defer src="sections/evo/evo.js?v=v3-17"></script>
   <script defer src="sections/porque/porque.js?v=v3-17"></script>

@@ -388,3 +388,26 @@ document.addEventListener('click', function (e) {
   var a = e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
   if (a && window.fbq) { fbq('track', 'Contact'); }
 });
+
+// Certificado: visor de 3 estados (cerrado · hover abre el folder · clic revela el
+// diploma). El botón "Ampliar" (data-open-cert) abre el lightbox existente.
+(function () {
+  var viewer = document.querySelector('[data-cert-viewer]');
+  if (!viewer) return;
+  var surface = viewer.querySelector('.cert-viewer__surface');
+  var resetBtn = viewer.querySelector('.cert-viewer__reset');
+  var zoomBtn = viewer.querySelector('.cert-viewer__zoom');
+
+  if (surface) surface.addEventListener('click', function () {
+    if (viewer.classList.contains('is-revealed')) {
+      if (zoomBtn) zoomBtn.click();   // ya revelado -> abrir el lightbox (full)
+    } else {
+      viewer.classList.add('is-revealed');
+    }
+  });
+  if (resetBtn) resetBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    viewer.classList.remove('is-revealed');
+    if (surface) surface.focus();
+  });
+})();

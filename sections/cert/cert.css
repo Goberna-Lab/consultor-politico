@@ -28,7 +28,7 @@
 .cert-viewer__stage { position: absolute; inset: 0; }
 .cert-viewer__img {
   position: absolute; inset: 0; margin: auto;
-  display: block; width: 100%; height: 100%; object-fit: contain;
+  display: block; width: 100%; height: 100%; object-fit: cover;
   opacity: 0; transform: scale(.985);
   transition: opacity .5s ease, transform .6s cubic-bezier(.22, 1, .36, 1);
   will-change: opacity, transform;

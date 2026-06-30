@@ -7,7 +7,7 @@
 .inv__price-card { position: relative; isolation: isolate; overflow: hidden; flex: 1; background: #eef3f2; color: #10231f; border-radius: 20px; padding: 36px; display: flex; flex-direction: column; }
 .inv__price-card::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: url("../../assets/img/fondo-inversion.webp") center / cover no-repeat; opacity: 0.25; mix-blend-mode: multiply; }
 .inv__price-card > * { position: relative; z-index: 1; }
-.inv__label { font-weight: 600; font-size: 13px; color: #9a7600; margin-bottom: 18px; }
+.inv__label { font-family: var(--font-sora); font-weight: 600; font-size: 13px; color: #9a7600; margin-bottom: 18px; }
 .inv__price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 26px; }
 .inv__cur { font-family: var(--font-sora); font-weight: 700; font-size: 18px; }
 .inv__amount { font-family: var(--font-sora); font-weight: 800; font-size: 46px; }

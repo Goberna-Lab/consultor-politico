@@ -1,9 +1,9 @@
 /* metodo — generado por refactor modular (verbatim de styles.css) */
 
 .metodo { background: #eef1f0; color: #10231f; padding: var(--sp) 0; }
-.metodo__label { font-weight: 600; font-size: 13px; letter-spacing: 1px; color: #9a7600; margin-bottom: 28px; }
+.metodo__label { font-family: var(--font-sora); font-weight: 600; font-size: 13px; letter-spacing: 1px; color: #9a7600; margin-bottom: 28px; }
 .metodo__title { font-family: var(--font-sora); font-weight: 800; font-size: 46px; color: #10231f; line-height: 1.1; margin-bottom: 18px; }
-.metodo__subtitle { font-family: var(--font-sora); font-weight: 600; font-size: 18px; color: #1e2b3a; margin-bottom: 64px; }
+.metodo__subtitle { font-family: var(--font-mont); font-weight: 600; font-size: 18px; color: #1e2b3a; margin-bottom: 64px; }
 .metodo__timeline { position: relative; display: flex; justify-content: space-between; gap: 10px; }
 .metodo__timeline::before { content: ""; position: absolute; top: 32px; left: 7%; right: 7%; height: 1px; background: rgba(16, 35, 31, 0.25); z-index: 0; }
 .metodo__step { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }

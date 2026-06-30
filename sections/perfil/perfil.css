@@ -8,7 +8,7 @@
   align-items: center;
 }
 .perfil__intro { max-width: 440px; }
-.perfil__label { font-weight: 600; font-size: 14px; letter-spacing: .05em; color: var(--gold); margin-bottom: 22px; }
+.perfil__label { font-family: var(--font-sora); font-weight: 600; font-size: 14px; letter-spacing: .05em; color: var(--gold); margin-bottom: 22px; }
 .perfil__title { font-family: var(--font-sora); font-weight: 800; font-size: clamp(34px, 4vw, 46px); line-height: 1.06; letter-spacing: -0.01em; margin-bottom: 18px; }
 .perfil__title-accent {
   background: linear-gradient(115deg, var(--gold) 8%, #ffe06b 68%, #ffffff 128%);

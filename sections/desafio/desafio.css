@@ -3,7 +3,7 @@
 .desafio { background: #eef1f0; color: var(--dark-text); }
 .desafio__inner { display: flex; align-items: center; gap: 80px; padding: var(--sp) 0; }
 .desafio__left { flex: 1 1 46%; max-width: 460px; }
-.desafio__label { font-weight: 700; font-size: 13px; letter-spacing: 1px; color: #9a7600; margin-bottom: 28px; }
+.desafio__label { font-family: var(--font-sora); font-weight: 700; font-size: 13px; letter-spacing: 1px; color: #9a7600; margin-bottom: 28px; }
 .desafio__title { color: #10231f; line-height: 1.03; margin-bottom: 26px; }
 .desafio__title span { display: block; font-weight: 800; font-size: clamp(36px, 4vw, 50px); letter-spacing: -0.5px; }
 .desafio__title strong { display: block; margin-top: 8px; font-weight: 600; font-size: clamp(19px, 2vw, 26px); letter-spacing: 0.2px; color: #9a7600; }

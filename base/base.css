@@ -19,11 +19,12 @@
 }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font-sora);
+  font-family: var(--font-mont);          /* cuerpo de texto: Montserrat (regla global) */
   background: var(--bg);
   color: var(--white);
   overflow-x: hidden;
 }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-sora); }   /* títulos: Sora (regla global) */
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 ul { list-style: none; }

@@ -40,8 +40,8 @@ var PHONE_CODES = {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Countdown timer - target: preventa consultor político (21 jun 2026 23:59 GMT-5)
-  const targetDate = new Date('2026-06-21T23:59:59-05:00');
+  // Countdown timer - target: inscripción consultor político (6 jul 2026 23:59 GMT-5)
+  const targetDate = new Date('2026-07-06T23:59:59-05:00');
 
   function setField(ids, value) {
     ids.forEach(function (id) {

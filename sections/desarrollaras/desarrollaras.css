@@ -50,9 +50,7 @@
   width: 1px; height: 36px; background: rgba(150, 180, 230, 0.20);
 }
 .desarrollaras__stat-ic {
-  width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%;
-  display: grid; place-items: center; color: #cdd9ee;
-  border: 1px solid rgba(150, 180, 230, 0.28); background: rgba(150, 180, 230, 0.06);
+  width: 46px; height: 46px; flex-shrink: 0; display: block;
 }
 .desarrollaras__stat-txt { white-space: nowrap; }
 .desarrollaras__stat-txt { display: flex; flex-direction: column; line-height: 1.2; font-family: var(--font-mont); font-size: 13px; color: var(--white-75); }
@@ -100,40 +98,43 @@
 .desarrollaras__card {
   position: relative; isolation: isolate; overflow: hidden;
   align-self: start;
-  background: linear-gradient(180deg, rgba(8, 14, 26, 0.82) 0%, rgba(6, 11, 22, 0.9) 100%);
+  background: #ffffff;
   border-radius: 22px;
-  padding: clamp(24px, 2.3vw, 38px) clamp(22px, 2.1vw, 34px) clamp(28px, 2.4vw, 38px);
-  border: 1.5px solid rgba(255, 200, 0, 0.5);
-  box-shadow: 0 30px 70px -34px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 200, 0, 0.08), inset 0 1px 0 rgba(255, 200, 0, 0.1);
+  padding: clamp(24px, 2.3vw, 38px) clamp(16px, 1.6vw, 24px) clamp(26px, 2.2vw, 34px);
+  border: 1.5px solid rgba(255, 200, 0, 0.6);
+  box-shadow: 0 30px 70px -34px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 200, 0, 0.12);
   display: flex; flex-direction: column;
 }
-/* Textura: mapa de puntos + radar dorado dentro de la card */
-.desarrollaras__card::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  opacity: .92;
-  background:
-    linear-gradient(180deg, rgba(6, 11, 22, 0.12) 0%, rgba(6, 11, 22, 0) 24%, rgba(6, 11, 22, 0.5) 58%, rgba(6, 11, 22, 0.85) 100%),
-    url("../../assets/img/warroom-bg.webp") right 18% / 150% auto no-repeat;
-}
-/* Línea punteada azul (detalle HUD) al pie de la card */
-.desarrollaras__card::after {
-  content: ""; position: absolute; left: clamp(22px, 2.1vw, 34px); right: clamp(22px, 2.1vw, 34px); bottom: clamp(14px, 1.4vw, 20px);
-  height: 0; border-bottom: 2px dashed rgba(64, 110, 230, 0.85); z-index: 1; pointer-events: none;
-}
-.desarrollaras__card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
-.desarrollaras__title { font-family: var(--font-sora); font-weight: 800; font-size: clamp(22px, 2.1vw, 28px); text-transform: uppercase; letter-spacing: .3px; color: #fff; }
-.desarrollaras__count { flex-shrink: 0; font-family: var(--font-sora); font-weight: 700; font-size: 12px; letter-spacing: .3px; color: var(--gold); background: transparent; border: 1px solid rgba(255, 200, 0, 0.5); padding: 6px 14px; border-radius: 100px; }
+.desarrollaras__card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1.5px solid rgba(237, 177, 7, 0.55); }
+.desarrollaras__flag { flex-shrink: 0; display: grid; place-items: center; filter: drop-shadow(0 4px 10px rgba(237, 177, 7, 0.3)); }
+.desarrollaras__title { font-family: var(--font-sora); font-weight: 800; font-size: clamp(22px, 2.1vw, 28px); text-transform: uppercase; letter-spacing: .3px; color: #14233f; }
 
-.desarrollaras__list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 18px; }
-.desarrollaras__item { display: flex; align-items: center; gap: 13px; padding: 8px 10px; border-radius: 10px; font-family: var(--font-mont); font-weight: 500; font-size: 16px; line-height: 1.35; color: rgba(255, 255, 255, 0.9); transition: background .2s ease; }
-.desarrollaras__item:hover { background: rgba(150, 180, 230, 0.07); }
-.desarrollaras__item--featured { color: var(--gold); font-weight: 700; }
-/* Check: aro dorado con tilde dorada */
-.desarrollaras__check { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; border: 1.8px solid rgba(255, 200, 0, 0.55); position: relative; }
-.desarrollaras__check::after { content: ""; position: absolute; left: 8px; top: 4.5px; width: 5px; height: 9px; border: solid var(--gold); border-width: 0 2px 2px 0; transform: rotate(45deg); }
-.desarrollaras__item--featured .desarrollaras__check { border-color: var(--gold); background: rgba(255, 200, 0, 0.12); }
+/* Lista: panel blanco continuo con divisores finos (fiel a la referencia) */
+.desarrollaras__list { display: flex; flex-direction: column; margin-bottom: 18px; background: #fff; border-radius: 12px; overflow: hidden; }
+.desarrollaras__item {
+  display: flex; align-items: center; gap: 12px; padding: 8px 14px;
+  font-family: var(--font-mont); font-weight: 500; font-size: 14px; line-height: 1.3; color: #283449;
+  border-bottom: 1px solid rgba(29, 43, 70, 0.08);
+  transition: background .2s ease;
+}
+.desarrollaras__item:last-child { border-bottom: 0; }
+.desarrollaras__item:hover { background: rgba(29, 43, 70, 0.035); }
+.desarrollaras__ic { flex-shrink: 0; width: 20px; height: 20px; object-fit: contain; opacity: .68; }
+.desarrollaras__item-txt { flex: 1 1 auto; min-width: 0; }
+.desarrollaras__tick { flex-shrink: 0; width: 18px; height: 18px; }
+/* War Room destacado: solo color dorado, mismo peso y fila que el resto */
+.desarrollaras__item--featured .desarrollaras__item-txt { color: #c8910c; }
+.desarrollaras__item--featured .desarrollaras__ic { opacity: 1; }
 
-.desarrollaras__note { margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(150, 180, 230, 0.16); font-family: var(--font-mont); font-size: 14px; line-height: 1.65; color: var(--white-60, rgba(255, 255, 255, 0.6)); }
+.desarrollaras__note {
+  margin-top: auto; display: flex; align-items: center; gap: 13px;
+  padding: 14px 16px; border-radius: 14px;
+  background: #f4f6f9; border: 1px solid rgba(29, 43, 70, 0.08);
+}
+.desarrollaras__note-ic { flex-shrink: 0; display: grid; place-items: center; }
+.desarrollaras__note-ic img { width: 40px; height: 40px; display: block; }
+.desarrollaras__note-txt { font-family: var(--font-mont); font-size: 14px; line-height: 1.6; color: #4a5568; }
+.desarrollaras__note-txt strong { font-weight: 700; color: #c8910c; }
 
 /* ============ Responsive ============ */
 @media (max-width: 900px) {
@@ -149,7 +150,7 @@
   .desarrollaras__stage { aspect-ratio: 4 / 3; border-radius: 18px; }
   .desarrollaras__badge { left: 14px; bottom: 14px; }
   .desarrollaras__card { border-radius: 18px; }
-  .desarrollaras__item { font-size: 15px; padding: 7px 8px; }
+  .desarrollaras__item { font-size: 13.5px; padding: 8px 12px; }
 }
 
 /* Accesibilidad: respetar reduce-motion */

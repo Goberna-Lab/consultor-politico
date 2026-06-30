@@ -1,7 +1,7 @@
 /* cert — generado por refactor modular (verbatim de styles.css) */
 
 .cert { background: #05080e; padding: var(--sp) 0; }
-.cert__label { display: block; font-weight: 600; font-size: 14px; color: var(--gold); margin-bottom: 28px; }
+.cert__label { display: block; font-family: var(--font-sora); font-weight: 600; font-size: 14px; color: var(--gold); margin-bottom: 28px; }
 .cert__row { display: flex; align-items: stretch; gap: 50px; }
 .cert__panel { flex: 1 1 52%; background: #eef3f2; color: #10231f; border-radius: 20px; padding: 40px; }
 .cert__title { font-family: var(--font-sora); line-height: 1.15; margin-bottom: 16px; }

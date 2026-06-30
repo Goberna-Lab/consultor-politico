@@ -28,10 +28,10 @@
 }
 .sabias__divider { width: 2px; align-self: stretch; margin: 24px 0; background: var(--gold); flex-shrink: 0; }
 .sabias__content { flex: 1; }
-.sabias__label { font-weight: 700; font-size: 18px; margin-bottom: 14px; }
+.sabias__label { font-family: var(--font-sora); font-weight: 700; font-size: 18px; margin-bottom: 14px; }
 .sabias__quote { font-size: 18px; line-height: 1.5; margin-bottom: 16px; }
 .sabias__dash { display: block; width: 32px; height: 2px; background: var(--gold); margin-bottom: 16px; }
-.sabias__author { font-weight: 700; font-size: 20px; color: var(--gold); }
+.sabias__author { font-family: var(--font-sora); font-weight: 700; font-size: 20px; color: var(--gold); }
 .sabias__role { font-size: 15px; color: var(--white-75); margin-top: 4px; }
 .sabias__explore {
   flex-shrink: 0;

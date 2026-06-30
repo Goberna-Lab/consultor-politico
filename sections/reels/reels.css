@@ -5,7 +5,7 @@
 .reels__inner { display: flex; align-items: center; gap: 60px; padding: var(--sp) 0; min-height: clamp(420px, 40vw, 520px); }
 .reels__left { flex: 1 1 42%; max-width: 430px; }
 .reels__title { font-family: var(--font-sora); font-weight: 800; font-size: 36px; line-height: 1.12; margin-bottom: 16px; }
-.reels__subtitle { font-family: var(--font-sora); font-weight: 600; font-size: 18px; margin-bottom: 18px; }
+.reels__subtitle { font-family: var(--font-mont); font-weight: 600; font-size: 18px; margin-bottom: 18px; }
 .reels__text { font-family: var(--font-mont); font-size: 13px; line-height: 1.7; color: var(--white-75); margin-bottom: 30px; }
 .reels__right { flex: 1 1 55%; }
 .reels__tabs { display: flex; gap: 14px; justify-content: center; margin-bottom: 34px; }

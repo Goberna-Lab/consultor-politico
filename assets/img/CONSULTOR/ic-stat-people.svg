@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="59" height="59" viewBox="0 0 59 59">
+  <g id="Grupo_5" data-name="Grupo 5" transform="translate(-132 -390)">
+    <g id="Elipse_1" data-name="Elipse 1" transform="translate(132 390)" fill="#1f262f" stroke="#3c4045" stroke-width="1">
+      <circle cx="29.5" cy="29.5" r="29.5" stroke="none"/>
+      <circle cx="29.5" cy="29.5" r="29" fill="none"/>
+    </g>
+    <g id="noun-people-8322814" transform="translate(133 386.5)">
+      <path id="Trazado_7" data-name="Trazado 7" d="M28.726,33.438a6.985,6.985,0,1,0-7.264,0A11.111,11.111,0,0,0,14,43.92a.822.822,0,1,0,1.644,0,9.45,9.45,0,0,1,18.9,0,.822.822,0,1,0,1.644,0,11.116,11.116,0,0,0-7.462-10.482Zm-8.974-5.953a5.341,5.341,0,1,1,5.341,5.341A5.346,5.346,0,0,1,19.753,27.485Z" fill="#fff"/>
+      <path id="Trazado_8" data-name="Trazado 8" d="M61.467,33.443A6.984,6.984,0,0,0,57.822,20.5a.822.822,0,0,0,0,1.644,5.341,5.341,0,1,1,0,10.683.822.822,0,0,0,0,1.644,9.462,9.462,0,0,1,9.45,9.45.822.822,0,1,0,1.644,0,11.105,11.105,0,0,0-7.449-10.477Z" transform="translate(-25.332)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
